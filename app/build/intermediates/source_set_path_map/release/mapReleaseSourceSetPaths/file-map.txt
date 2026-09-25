@@ -1,0 +1,81 @@
+com.lw.audiomaster.app-navigation-compose-release-0 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\007f2fc3347316d11ba1f276fda4ef2c\transformed\navigation-compose-release\res
+com.lw.audiomaster.app-lifecycle-viewmodel-release-1 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\023b90d36233c887cd0d56fec39e9a9d\transformed\lifecycle-viewmodel-release\res
+com.lw.audiomaster.app-ui-util-release-2 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\031b007c2bb511301127051919781236\transformed\ui-util-release\res
+com.lw.audiomaster.app-media3-exoplayer-1.4.1-3 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\071f7da8aa07d59baf96825f4a92e5de\transformed\media3-exoplayer-1.4.1\res
+com.lw.audiomaster.app-core-viewtree-1.0.0-4 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\09d7b31bc3d996c709a55ff28b039f93\transformed\core-viewtree-1.0.0\res
+com.lw.audiomaster.app-activity-compose-1.10.1-5 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\0f6c6f94a07c6e74d259f22424108bdf\transformed\activity-compose-1.10.1\res
+com.lw.audiomaster.app-firebase-crashlytics-19.3.0-6 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\0fbb534ad2b6a02349418d7d7bac0281\transformed\firebase-crashlytics-19.3.0\res
+com.lw.audiomaster.app-core-1.15.0-7 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\20fb838f9cffd165444209d210b5a878\transformed\core-1.15.0\res
+com.lw.audiomaster.app-profileinstaller-1.4.0-8 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\2314bd4e7ca841a306c2cf29dcd37279\transformed\profileinstaller-1.4.0\res
+com.lw.audiomaster.app-lifecycle-runtime-release-9 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\28edd80ca2f36eed4d8a14a6000f018d\transformed\lifecycle-runtime-release\res
+com.lw.audiomaster.app-animation-release-10 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\2ddbd53917ea301197c7fc2bb7233469\transformed\animation-release\res
+com.lw.audiomaster.app-core-runtime-2.2.0-11 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\2ef2b53e15113f3881d8542942432f36\transformed\core-runtime-2.2.0\res
+com.lw.audiomaster.app-savedstate-compose-release-12 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\31e36a9bad5aada37dba4a4ebd978ac4\transformed\savedstate-compose-release\res
+com.lw.audiomaster.app-savedstate-release-13 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\353582a8e16d4267b140f5aa052f9cf7\transformed\savedstate-release\res
+com.lw.audiomaster.app-core-common-2.0.4-14 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\359a80c230a73dad5ee8ceb291a1bdd0\transformed\core-common-2.0.4\res
+com.lw.audiomaster.app-lifecycle-livedata-core-ktx-2.9.0-15 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\37a192771279f69de616994804ea1852\transformed\lifecycle-livedata-core-ktx-2.9.0\res
+com.lw.audiomaster.app-ads-adservices-java-1.0.0-beta05-16 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\38558b84e663c11639bc38208f5d3910\transformed\ads-adservices-java-1.0.0-beta05\res
+com.lw.audiomaster.app-lifecycle-livedata-2.9.0-17 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\388b3b2bc4919844b4db0f59f51fc3d3\transformed\lifecycle-livedata-2.9.0\res
+com.lw.audiomaster.app-core-splashscreen-1.0.1-18 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\417e100d2b3c3cfcbabd995e6809e9d3\transformed\core-splashscreen-1.0.1\res
+com.lw.audiomaster.app-navigation-runtime-release-19 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\42c062ff9241d0062aea6918bf64665a\transformed\navigation-runtime-release\res
+com.lw.audiomaster.app-room-runtime-release-20 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\42d264f353e1ceaade96d6b2bce248a0\transformed\room-runtime-release\res
+com.lw.audiomaster.app-runtime-release-21 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\473c81d34055e1f665dcaa7ef7f2a7f5\transformed\runtime-release\res
+com.lw.audiomaster.app-play-services-ads-api-24.4.0-22 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\4ba51857ca89a27c7c6697d86fbeb369\transformed\play-services-ads-api-24.4.0\res
+com.lw.audiomaster.app-lifecycle-viewmodel-compose-release-23 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\4d987dbcfb4cd5d4ac0264a36e831880\transformed\lifecycle-viewmodel-compose-release\res
+com.lw.audiomaster.app-datastore-core-release-24 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\535ef99b5a3e3b0d3d7217b520359d16\transformed\datastore-core-release\res
+com.lw.audiomaster.app-ads-adservices-1.0.0-beta05-25 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\541a5f6686b366aa112b62715789c96f\transformed\ads-adservices-1.0.0-beta05\res
+com.lw.audiomaster.app-material-ripple-release-26 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\543acd91e2bd5a7c73c92c7ece089f37\transformed\material-ripple-release\res
+com.lw.audiomaster.app-ui-geometry-release-27 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\5f4e1dd91ee033105b848e7937cb9369\transformed\ui-geometry-release\res
+com.lw.audiomaster.app-annotation-experimental-1.4.1-28 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\6046bfc4d212156f139390cccb4490cc\transformed\annotation-experimental-1.4.1\res
+com.lw.audiomaster.app-material3-release-29 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\676e1deb779f970eb7169b38c97c7369\transformed\material3-release\res
+com.lw.audiomaster.app-activity-ktx-1.10.1-30 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\6db5f04762444a724f41fbbcbc0b35ff\transformed\activity-ktx-1.10.1\res
+com.lw.audiomaster.app-ui-graphics-release-31 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\6dcd92acc136d7e53dd5c187f50a22cb\transformed\ui-graphics-release\res
+com.lw.audiomaster.app-lifecycle-livedata-core-2.9.0-32 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\71f99c339a7996eaca47093c3fea73d4\transformed\lifecycle-livedata-core-2.9.0\res
+com.lw.audiomaster.app-graphics-path-1.0.1-33 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\75c26d251ea74b5707131471d7643d5c\transformed\graphics-path-1.0.1\res
+com.lw.audiomaster.app-lifecycle-runtime-compose-release-34 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\7b2501bfca6f67a9538af5bf81ef7bad\transformed\lifecycle-runtime-compose-release\res
+com.lw.audiomaster.app-foundation-layout-release-35 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\7dc205ded8e625689ad950af2a66c136\transformed\foundation-layout-release\res
+com.lw.audiomaster.app-lifecycle-viewmodel-savedstate-release-36 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\7f2e87f0115dda410022622536d4f527\transformed\lifecycle-viewmodel-savedstate-release\res
+com.lw.audiomaster.app-lifecycle-service-2.9.0-37 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\7f37732694a97918dd5140e42243e8f8\transformed\lifecycle-service-2.9.0\res
+com.lw.audiomaster.app-firebase-common-21.0.0-38 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\83c896624ebdf7836d22d4977797f9b6\transformed\firebase-common-21.0.0\res
+com.lw.audiomaster.app-sqlite-release-39 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\8438a8181135649891bf0e2f6482a0b0\transformed\sqlite-release\res
+com.lw.audiomaster.app-runtime-saveable-release-40 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\86c1f0892ac98ca5c9e9bf423fde01ba\transformed\runtime-saveable-release\res
+com.lw.audiomaster.app-lifecycle-process-2.9.0-41 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\8a4b268d31157e0b182d01b17ccbe359\transformed\lifecycle-process-2.9.0\res
+com.lw.audiomaster.app-material-icons-core-release-42 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\954b336b11af0f7321e95a6774e56879\transformed\material-icons-core-release\res
+com.lw.audiomaster.app-startup-runtime-1.1.1-43 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\9a7da4e7f017bea2508fb85b961a2523\transformed\startup-runtime-1.1.1\res
+com.lw.audiomaster.app-material-icons-extended-release-44 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\9fc75f94acb31031b51025e82e94c967\transformed\material-icons-extended-release\res
+com.lw.audiomaster.app-core-ktx-1.15.0-45 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\a2fc29e32d520ca3ee1e39ce7c9ac2c9\transformed\core-ktx-1.15.0\res
+com.lw.audiomaster.app-datastore-release-46 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\a41eae897e7b1135d300a114153bf543\transformed\datastore-release\res
+com.lw.audiomaster.app-savedstate-ktx-1.3.0-47 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\a7241d5213026c1f057d0151e2bb80e7\transformed\savedstate-ktx-1.3.0\res
+com.lw.audiomaster.app-activity-1.10.1-48 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\ab8d95ffeb6d655d2ccd4f13d9de187c\transformed\activity-1.10.1\res
+com.lw.audiomaster.app-animation-core-release-49 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\ad58cbb7497b6eca1742c728186d8dd2\transformed\animation-core-release\res
+com.lw.audiomaster.app-lifecycle-viewmodel-ktx-2.9.0-50 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\b8ee9954432f4dac13235f99da5edcea\transformed\lifecycle-viewmodel-ktx-2.9.0\res
+com.lw.audiomaster.app-ui-release-51 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\b9575430fc49e8ef4aaea4d81e88681c\transformed\ui-release\res
+com.lw.audiomaster.app-work-runtime-2.7.0-52 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\b9fcad15b4fac2d464e574f27636c229\transformed\work-runtime-2.7.0\res
+com.lw.audiomaster.app-ui-unit-release-53 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\bfa9d06801b7fa964ff505b658ab466c\transformed\ui-unit-release\res
+com.lw.audiomaster.app-billing-9.1.0-54 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\c22d9cfb1ba96d50d8c9c3175225a61e\transformed\billing-9.1.0\res
+com.lw.audiomaster.app-browser-1.8.0-55 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\c292c47d6e91a23172480f5f605da80f\transformed\browser-1.8.0\res
+com.lw.audiomaster.app-play-services-ads-24.4.0-56 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\c847a2bab325521d78b76b9b264e67ad\transformed\play-services-ads-24.4.0\res
+com.lw.audiomaster.app-foundation-release-57 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\c9c48f6b21712a63b09c79334756b387\transformed\foundation-release\res
+com.lw.audiomaster.app-datastore-preferences-release-58 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\cb3a1c0b529fc578774a33374cb0a767\transformed\datastore-preferences-release\res
+com.lw.audiomaster.app-play-services-basement-18.9.0-59 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\d0cac0f8fa4d8f5b7f8d0816aad8e948\transformed\play-services-basement-18.9.0\res
+com.lw.audiomaster.app-play-services-base-18.5.0-60 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\d27856df7ac9fcb075e03160ebc1e448\transformed\play-services-base-18.5.0\res
+com.lw.audiomaster.app-sqlite-framework-release-61 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\d5abda783648701eb17df1de3a31b9f4\transformed\sqlite-framework-release\res
+com.lw.audiomaster.app-ui-tooling-preview-release-62 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\da9a0640fe069a31ad00ffd99d2335c3\transformed\ui-tooling-preview-release\res
+com.lw.audiomaster.app-room-ktx-2.7.1-63 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\e4b4520b2f8733b8e7386ed14e2c490c\transformed\room-ktx-2.7.1\res
+com.lw.audiomaster.app-navigation-common-release-64 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\ec82f7492633015d4909fa48d14207d1\transformed\navigation-common-release\res
+com.lw.audiomaster.app-tracing-1.2.0-65 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\ef3212b4c35a30e4af5ad9d389e03d7a\transformed\tracing-1.2.0\res
+com.lw.audiomaster.app-emoji2-1.4.0-66 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\f39df274486fee7df5ccce06641f57ea\transformed\emoji2-1.4.0\res
+com.lw.audiomaster.app-play-services-measurement-api-22.1.2-67 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\f6346f9cd142234da814c82dee2afe34\transformed\play-services-measurement-api-22.1.2\res
+com.lw.audiomaster.app-customview-poolingcontainer-1.0.0-68 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\f6f3c571871f179ba2f5100c5b5573ce\transformed\customview-poolingcontainer-1.0.0\res
+com.lw.audiomaster.app-ui-text-release-69 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\f93b0279c7fbef1572172f7ee4b0edfc\transformed\ui-text-release\res
+com.lw.audiomaster.app-webkit-1.11.0-alpha02-70 C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\fd322958f7a68ccb581903d9928ebe94\transformed\webkit-1.11.0-alpha02\res
+com.lw.audiomaster.app-res-71 E:\Logic Worms Apps\AudioMaster\app\build\generated\res\injectCrashlyticsMappingFileIdRelease
+com.lw.audiomaster.app-res-72 E:\Logic Worms Apps\AudioMaster\app\build\generated\res\injectCrashlyticsVersionControlInfoRelease
+com.lw.audiomaster.app-res-73 E:\Logic Worms Apps\AudioMaster\app\build\generated\res\processReleaseGoogleServices
+com.lw.audiomaster.app-resValues-74 E:\Logic Worms Apps\AudioMaster\app\build\generated\res\resValues\release
+com.lw.audiomaster.app-packageReleaseResources-75 E:\Logic Worms Apps\AudioMaster\app\build\intermediates\incremental\release\packageReleaseResources\merged.dir
+com.lw.audiomaster.app-packageReleaseResources-76 E:\Logic Worms Apps\AudioMaster\app\build\intermediates\incremental\release\packageReleaseResources\stripped.dir
+com.lw.audiomaster.app-merged-not-compiled-resources-77 E:\Logic Worms Apps\AudioMaster\app\build\intermediates\merged-not-compiled-resources\release
+com.lw.audiomaster.app-release-78 E:\Logic Worms Apps\AudioMaster\app\build\intermediates\merged_res\release\mergeReleaseResources
+com.lw.audiomaster.app-main-79 E:\Logic Worms Apps\AudioMaster\app\src\main\res
+com.lw.audiomaster.app-release-80 E:\Logic Worms Apps\AudioMaster\app\src\release\res

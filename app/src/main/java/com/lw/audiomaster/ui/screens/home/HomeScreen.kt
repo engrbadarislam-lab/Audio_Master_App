@@ -1,5 +1,6 @@
 package com.lw.audiomaster.ui.screens.home
 
+import android.app.Activity
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -48,6 +49,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.google.android.play.core.review.ReviewManagerFactory
 import com.lw.audiomaster.R
 import com.lw.audiomaster.ads.NativeAdView
 import com.lw.audiomaster.data.local.ProjectEntity
@@ -69,6 +71,13 @@ import com.lw.audiomaster.ui.theme.Surface2
 import com.lw.audiomaster.ui.theme.TextMuted
 import com.lw.audiomaster.ui.theme.TextPrimary
 import com.lw.audiomaster.ui.theme.TextSecondary
+import kotlinx.coroutines.delay
+
+/** True once Home has been shown this session (so the next time = user came back). */
+private var homeShownBefore = false
+
+/** Ask for a review at most once per app session. */
+private var reviewAskedThisSession = false
 
 @Composable
 fun HomeScreen(
@@ -87,7 +96,16 @@ fun HomeScreen(
     val projects by vm.projects.collectAsState(initial = emptyList())
     val context = LocalContext.current
 
-    // One-time interstitial when the user first enters the app.
+    // Google in-app review: when the user navigates BACK to Home from any screen.
+    LaunchedEffect(Unit) {
+        if (!homeShownBefore) {
+            homeShownBefore = true          // first time Home appears → not a "back"
+        } else if (!reviewAskedThisSession) {
+            reviewAskedThisSession = true
+            delay(600)                      // let the back transition finish
+            context.findActivity()?.let { launchInAppReview(it) }
+        }
+    }
 
     ScreenBackground {
         Column(Modifier.fillMaxSize().statusBarsPadding()) {
@@ -97,94 +115,104 @@ fun HomeScreen(
                     .fillMaxWidth(),
                 contentPadding = androidx.compose.foundation.layout.PaddingValues(20.dp)
             ) {
-            item {
-                Row(verticalAlignment = Alignment.CenterVertically) {
-                    Column(Modifier.weight(1f)) {
-                        Text(stringResource(R.string.home_welcome), color = TextSecondary, fontSize = 13.sp)
-                        Spacer(Modifier.height(2.dp))
-                        GradientText("AudioMaster", fontSize = 26.sp)
-                    }
-                    CircleIconButton(Icons.Rounded.Settings, onClick = onOpenSettings, tint = TextSecondary)
-                }
-                Spacer(Modifier.height(20.dp))
-            }
-
-            if (!isPro) {
                 item {
-                    ProUpsellCard(onUpgrade)
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        Column(Modifier.weight(1f)) {
+                            Text(stringResource(R.string.home_welcome), color = TextSecondary, fontSize = 13.sp)
+                            Spacer(Modifier.height(2.dp))
+                            GradientText("AudioMaster", fontSize = 26.sp)
+                        }
+                        CircleIconButton(Icons.Rounded.Settings, onClick = onOpenSettings, tint = TextSecondary)
+                    }
                     Spacer(Modifier.height(20.dp))
                 }
-            }
 
-            item {
-                // Hero "new master" card
-                Box(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clip(RoundedCornerShape(24.dp))
-                        .background(Gradients.brandVertical)
-                        .clickable(onClick = onNewProject)
-                        .padding(20.dp)
-                ) {
-                    Column {
-                        Icon(Icons.Rounded.GraphicEq, contentDescription = null, tint = Color.White, modifier = Modifier.size(34.dp))
-                        Spacer(Modifier.height(14.dp))
-                        Text(stringResource(R.string.home_master_new), color = Color.White, fontWeight = FontWeight.Bold, fontSize = 20.sp)
-                        Spacer(Modifier.height(4.dp))
-                        Text(stringResource(R.string.home_master_sub), color = Color.White.copy(alpha = 0.85f), fontSize = 13.sp)
-                        Spacer(Modifier.height(16.dp))
-                        Row(
-                            modifier = Modifier
-                                .clip(RoundedCornerShape(12.dp))
-                                .background(Color.White.copy(alpha = 0.18f))
-                                .padding(horizontal = 14.dp, vertical = 8.dp),
-                            verticalAlignment = Alignment.CenterVertically
-                        ) {
-                            Icon(Icons.Rounded.Add, contentDescription = null, tint = Color.White, modifier = Modifier.size(18.dp))
-                            Spacer(Modifier.width(6.dp))
-                            Text(stringResource(R.string.action_start), color = Color.White, fontWeight = FontWeight.Bold, fontSize = 14.sp)
-                        }
+                if (!isPro) {
+                    item {
+                        ProUpsellCard(onUpgrade)
+                        Spacer(Modifier.height(20.dp))
                     }
                 }
-                Spacer(Modifier.height(20.dp))
-            }
 
-            item {
-                SectionHeader(stringResource(R.string.home_quick_tools))
-                Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-                    QuickTool(Icons.Rounded.AutoAwesome, stringResource(R.string.tool_auto_master), Modifier.weight(1f), onQuickMaster)
-                    QuickTool(Icons.Rounded.Equalizer, stringResource(R.string.tool_equalizer), Modifier.weight(1f), onOpenEq)
-                }
-                Spacer(Modifier.height(12.dp))
-                Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-                    QuickTool(Icons.Rounded.Tune, stringResource(R.string.tool_presets), Modifier.weight(1f), onOpenPresets)
-                    QuickTool(Icons.Rounded.VolumeUp, stringResource(R.string.tool_volume_boost), Modifier.weight(1f), onOpenVolume)
-                }
-                Spacer(Modifier.height(24.dp))
-            }
-
-            item {
-                SectionHeader(stringResource(R.string.home_recent), action = if (projects.isNotEmpty()) stringResource(R.string.home_see_all) else null, onAction = onOpenLibrary)
-            }
-
-            if (projects.isEmpty()) {
-                item { EmptyProjects(onNewProject) }
-            } else {
-                items(projects.take(4), key = { it.id }) { p ->
-                    ProjectRow(p, onClick = { onOpenProject(p.id) })
-                    Spacer(Modifier.height(10.dp))
-                }
-            }
-
-            if (!isPro) {
                 item {
-                    Spacer(Modifier.height(16.dp))
-                    NativeAdView("ads_home_native")
+                    // Hero "new master" card
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .clip(RoundedCornerShape(24.dp))
+                            .background(Gradients.brandVertical)
+                            .clickable(onClick = onNewProject)
+                            .padding(20.dp)
+                    ) {
+                        Column {
+                            Icon(Icons.Rounded.GraphicEq, contentDescription = null, tint = Color.White, modifier = Modifier.size(34.dp))
+                            Spacer(Modifier.height(14.dp))
+                            Text(stringResource(R.string.home_master_new), color = Color.White, fontWeight = FontWeight.Bold, fontSize = 20.sp)
+                            Spacer(Modifier.height(4.dp))
+                            Text(stringResource(R.string.home_master_sub), color = Color.White.copy(alpha = 0.85f), fontSize = 13.sp)
+                            Spacer(Modifier.height(16.dp))
+                            Row(
+                                modifier = Modifier
+                                    .clip(RoundedCornerShape(12.dp))
+                                    .background(Color.White.copy(alpha = 0.18f))
+                                    .padding(horizontal = 14.dp, vertical = 8.dp),
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                Icon(Icons.Rounded.Add, contentDescription = null, tint = Color.White, modifier = Modifier.size(18.dp))
+                                Spacer(Modifier.width(6.dp))
+                                Text(stringResource(R.string.action_start), color = Color.White, fontWeight = FontWeight.Bold, fontSize = 14.sp)
+                            }
+                        }
+                    }
+                    Spacer(Modifier.height(20.dp))
                 }
-            }
+
+                item {
+                    SectionHeader(stringResource(R.string.home_quick_tools))
+                    Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+                        QuickTool(Icons.Rounded.AutoAwesome, stringResource(R.string.tool_auto_master), Modifier.weight(1f), onQuickMaster)
+                        QuickTool(Icons.Rounded.Equalizer, stringResource(R.string.tool_equalizer), Modifier.weight(1f), onOpenEq)
+                    }
+                    Spacer(Modifier.height(12.dp))
+                    Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+                        QuickTool(Icons.Rounded.Tune, stringResource(R.string.tool_presets), Modifier.weight(1f), onOpenPresets)
+                        QuickTool(Icons.Rounded.VolumeUp, stringResource(R.string.tool_volume_boost), Modifier.weight(1f), onOpenVolume)
+                    }
+                    Spacer(Modifier.height(24.dp))
+                }
+
+                item {
+                    SectionHeader(stringResource(R.string.home_recent), action = if (projects.isNotEmpty()) stringResource(R.string.home_see_all) else null, onAction = onOpenLibrary)
+                }
+
+                if (projects.isEmpty()) {
+                    item { EmptyProjects(onNewProject) }
+                } else {
+                    items(projects.take(4), key = { it.id }) { p ->
+                        ProjectRow(p, onClick = { onOpenProject(p.id) })
+                        Spacer(Modifier.height(10.dp))
+                    }
+                }
+
+                if (!isPro) {
+                    item {
+                        Spacer(Modifier.height(16.dp))
+                        NativeAdView("ads_home_native")
+                    }
+                }
             }
 
             Spacer(Modifier.navigationBarsPadding())
+        }
+    }
+}
+
+/** Opens the Google Play in-app review dialog (Google decides if it actually shows). */
+private fun launchInAppReview(activity: Activity) {
+    val manager = ReviewManagerFactory.create(activity)
+    manager.requestReviewFlow().addOnCompleteListener { task ->
+        if (task.isSuccessful && !activity.isFinishing && !activity.isDestroyed) {
+            manager.launchReviewFlow(activity, task.result)
         }
     }
 }

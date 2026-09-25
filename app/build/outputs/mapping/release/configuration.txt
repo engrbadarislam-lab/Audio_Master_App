@@ -1,0 +1,1436 @@
+# The proguard configuration file for the following section is E:\Logic Worms Apps\AudioMaster\app\build\intermediates\aapt_proguard_file\release\processReleaseResources\aapt_rules.txt
+-keep class androidx.core.app.CoreComponentFactory { <init>(); }
+-keep class androidx.profileinstaller.ProfileInstallReceiver { <init>(); }
+-keep class androidx.room.MultiInstanceInvalidationService { <init>(); }
+-keep class androidx.startup.InitializationProvider { <init>(); }
+-keep class androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy { <init>(); }
+-keep class androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy { <init>(); }
+-keep class androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy { <init>(); }
+-keep class androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy { <init>(); }
+-keep class androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver { <init>(); }
+-keep class androidx.work.impl.background.systemalarm.RescheduleReceiver { <init>(); }
+-keep class androidx.work.impl.background.systemalarm.SystemAlarmService { <init>(); }
+-keep class androidx.work.impl.background.systemjob.SystemJobService { <init>(); }
+-keep class androidx.work.impl.diagnostics.DiagnosticsReceiver { <init>(); }
+-keep class androidx.work.impl.foreground.SystemForegroundService { <init>(); }
+-keep class androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver { <init>(); }
+-keep class com.android.billingclient.api.ProxyBillingActivity { <init>(); }
+-keep class com.android.billingclient.api.ProxyBillingActivityV2 { <init>(); }
+-keep class com.facebook.ads.AudienceNetworkActivity { <init>(); }
+-keep class com.facebook.ads.AudienceNetworkContentProvider { <init>(); }
+-keep class com.google.android.datatransport.runtime.backends.TransportBackendDiscovery { <init>(); }
+-keep class com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver { <init>(); }
+-keep class com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService { <init>(); }
+-keep class com.google.android.gms.ads.AdActivity { <init>(); }
+-keep class com.google.android.gms.ads.AdService { <init>(); }
+-keep class com.google.android.gms.ads.MobileAdsInitProvider { <init>(); }
+-keep class com.google.android.gms.ads.NotificationHandlerActivity { <init>(); }
+-keep class com.google.android.gms.ads.OutOfContextTestingActivity { <init>(); }
+-keep class com.google.android.gms.common.api.GoogleApiActivity { <init>(); }
+-keep class com.google.android.gms.measurement.AppMeasurementJobService { <init>(); }
+-keep class com.google.android.gms.measurement.AppMeasurementReceiver { <init>(); }
+-keep class com.google.android.gms.measurement.AppMeasurementService { <init>(); }
+-keep class com.google.android.play.core.common.PlayCoreDialogWrapperActivity { <init>(); }
+-keep class com.google.firebase.components.ComponentDiscoveryService { <init>(); }
+-keep class com.google.firebase.provider.FirebaseInitProvider { <init>(); }
+-keep class com.google.firebase.sessions.SessionLifecycleService { <init>(); }
+-keep class com.lw.audiomaster.AudioMasterApp { <init>(); }
+-keep class com.lw.audiomaster.MainActivity { <init>(); }
+-keep class androidx.browser.browseractions.BrowserActionsFallbackMenuView { <init>(android.content.Context, android.util.AttributeSet); }
+
+-keep class com.google.android.gms.ads.nativead.MediaView { <init>(android.content.Context, android.util.AttributeSet); }
+
+-keep class com.google.android.gms.ads.nativead.NativeAdView { <init>(android.content.Context, android.util.AttributeSet); }
+
+
+# End of content from E:\Logic Worms Apps\AudioMaster\app\build\intermediates\aapt_proguard_file\release\processReleaseResources\aapt_rules.txt
+# The proguard configuration file for the following section is E:\Logic Worms Apps\AudioMaster\app\build\intermediates\default_proguard_files\global\proguard-android-optimize.txt-8.9.1
+# This is a configuration file for ProGuard.
+# http://proguard.sourceforge.net/index.html#manual/usage.html
+#
+# Starting with version 2.2 of the Android plugin for Gradle, this file is distributed together with
+# the plugin and unpacked at build-time. The files in $ANDROID_HOME are no longer maintained and
+# will be ignored by new version of the Android plugin for Gradle.
+
+# Optimizations: If you don't want to optimize, use the proguard-android.txt configuration file
+# instead of this one, which turns off the optimization flags.
+-allowaccessmodification
+
+# Preserve some attributes that may be required for reflection.
+-keepattributes AnnotationDefault,
+                EnclosingMethod,
+                InnerClasses,
+                RuntimeVisibleAnnotations,
+                RuntimeVisibleParameterAnnotations,
+                RuntimeVisibleTypeAnnotations,
+                Signature
+
+-keep public class com.google.vending.licensing.ILicensingService
+-keep public class com.android.vending.licensing.ILicensingService
+-keep public class com.google.android.vending.licensing.ILicensingService
+-dontnote com.android.vending.licensing.ILicensingService
+-dontnote com.google.vending.licensing.ILicensingService
+-dontnote com.google.android.vending.licensing.ILicensingService
+
+# For native methods, see https://www.guardsquare.com/manual/configuration/examples#native
+-keepclasseswithmembernames,includedescriptorclasses class * {
+    native <methods>;
+}
+
+# Keep setters in Views so that animations can still work.
+-keepclassmembers public class * extends android.view.View {
+    void set*(***);
+    *** get*();
+}
+
+# We want to keep methods in Activity that could be used in the XML attribute onClick.
+-keepclassmembers class * extends android.app.Activity {
+    public void *(android.view.View);
+}
+
+# For enumeration classes, see https://www.guardsquare.com/manual/configuration/examples#enumerations
+-keepclassmembers enum * {
+    public static **[] values();
+    public static ** valueOf(java.lang.String);
+}
+
+-keepclassmembers class * implements android.os.Parcelable {
+    public static final ** CREATOR;
+}
+
+# Preserve annotated Javascript interface methods.
+-keepclassmembers class * {
+    @android.webkit.JavascriptInterface <methods>;
+}
+
+# The support libraries contains references to newer platform versions.
+# Don't warn about those in case this app is linking against an older
+# platform version. We know about them, and they are safe.
+-dontnote android.support.**
+-dontnote androidx.**
+-dontwarn android.support.**
+-dontwarn androidx.**
+
+# Understand the @Keep support annotation.
+-keep class android.support.annotation.Keep
+
+-keep @android.support.annotation.Keep class * {*;}
+
+-keepclasseswithmembers class * {
+    @android.support.annotation.Keep <methods>;
+}
+
+-keepclasseswithmembers class * {
+    @android.support.annotation.Keep <fields>;
+}
+
+-keepclasseswithmembers class * {
+    @android.support.annotation.Keep <init>(...);
+}
+
+# These classes are duplicated between android.jar and org.apache.http.legacy.jar.
+-dontnote org.apache.http.**
+-dontnote android.net.http.**
+
+# These classes are duplicated between android.jar and core-lambda-stubs.jar.
+-dontnote java.lang.invoke.**
+
+# End of content from E:\Logic Worms Apps\AudioMaster\app\build\intermediates\default_proguard_files\global\proguard-android-optimize.txt-8.9.1
+# The proguard configuration file for the following section is E:\Logic Worms Apps\AudioMaster\app\proguard-rules.pro
+# Play Billing
+-keep class com.android.billingclient.** { *; }
+# Room
+-keep class * extends androidx.room.RoomDatabase { *; }
+-dontwarn androidx.room.paging.**
+# Media3
+-dontwarn androidx.media3.**
+# Keep Compose runtime
+-keep class androidx.compose.runtime.** { *; }
+
+# ---- AdMob (Google Mobile Ads) ----
+-keep class com.google.android.gms.ads.** { *; }
+-keep class com.google.ads.** { *; }
+-dontwarn com.google.android.gms.ads.**
+
+# ---- Meta Audience Network mediation adapter ----
+-keep class com.google.ads.mediation.facebook.** { *; }
+-keep class com.facebook.ads.** { *; }
+-dontwarn com.facebook.ads.**
+-keep public class com.google.android.gms.ads.mediation.** { public *; }
+
+# ---- User Messaging Platform (UMP consent) ----
+-keep class com.google.android.ump.** { *; }
+-dontwarn com.google.android.ump.**
+
+# End of content from E:\Logic Worms Apps\AudioMaster\app\proguard-rules.pro
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\42c062ff9241d0062aea6918bf64665a\transformed\navigation-runtime-release\proguard.txt
+# Intentionally empty proguard rules to indicate this library is safe to shrink
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\42c062ff9241d0062aea6918bf64665a\transformed\navigation-runtime-release\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\ec82f7492633015d4909fa48d14207d1\transformed\navigation-common-release\proguard.txt
+# Copyright (C) 2019 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# NavArgsLazy creates NavArgs instances using reflection
+-if public class ** implements androidx.navigation.NavArgs
+-keepclassmembers public class <1> {
+    ** fromBundle(android.os.Bundle);
+}
+
+# Retain the @Navigator.Name annotation on each subclass of Navigator.
+# R8 full mode only retains annotations on items matched by a -keep rule,
+# hence the extra -keep rule for the subclasses of Navigator.
+#
+# A -keep rule for the Navigator.Name annotation class is not required
+# since the annotation is referenced from the code.
+-keepattributes RuntimeVisibleAnnotations
+-keep,allowobfuscation,allowshrinking class * extends androidx.navigation.Navigator
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\ec82f7492633015d4909fa48d14207d1\transformed\navigation-common-release\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\007f2fc3347316d11ba1f276fda4ef2c\transformed\navigation-compose-release\proguard.txt
+# Intentionally empty proguard rules to indicate this library is safe to shrink
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\007f2fc3347316d11ba1f276fda4ef2c\transformed\navigation-compose-release\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\bd454dde23136b74cd7e57697002fa9a\transformed\billing-ktx-9.1.0\proguard.txt
+# See https://discuss.gradle.org/t/meta-inf-version-duplicate-error-when-using-proguard/31380
+-dontwarn module-info
+
+-dontwarn java.lang.instrument.ClassFileTransformer
+-dontwarn sun.misc.SignalHandler
+-dontwarn java.lang.instrument.Instrumentation
+-dontwarn sun.misc.Signal
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\bd454dde23136b74cd7e57697002fa9a\transformed\billing-ktx-9.1.0\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\c22d9cfb1ba96d50d8c9c3175225a61e\transformed\billing-9.1.0\proguard.txt
+# Keep the AIDL interface
+-keep class com.android.vending.billing.** { *; }
+-keep class com.google.android.apps.play.billingtestcompanion.aidl.** { *; }
+
+-dontwarn javax.annotation.**
+-dontwarn org.checkerframework.**
+-dontwarn com.google.android.apps.common.proguard.UsedByReflection
+
+-keepnames class com.android.billingclient.api.ProxyBillingActivity
+-keepnames class com.android.billingclient.api.ProxyBillingActivityV2
+
+# Avoids Proguard warning at build time due to Protobuf use of sun.misc.Unsafe
+# and libcore.io.Memory which are available at runtime.
+-dontwarn libcore.io.Memory
+-dontwarn sun.misc.Unsafe
+
+
+# For Phenotype
+# An unused P/H transitive dependency: com.google.android.libraries.phenotype.registration.PhenotypeResourceReader is stripped out from all Granular normal deps and "can't find reference..." DepsVersionCompat test warning
+# is suppressed by ProGuard -dontwarn config.
+-dontwarn com.google.android.libraries.phenotype.registration.PhenotypeResourceReader
+-dontwarn com.google.android.apps.common.proguard.SideEffectFree
+
+# Uses reflection to determine if these classes are present and has a graceful
+# fallback if they aren't. The test failure it fixes appears to be caused by flogger.
+-dontwarn dalvik.system.VMStack
+-dontwarn com.google.common.flogger.backend.google.GooglePlatform
+-dontwarn com.google.common.flogger.backend.system.DefaultPlatform
+# We keep all fields for every generated proto file as the runtime uses
+# reflection over them that ProGuard cannot detect. Without this keep
+# rule, fields may be removed that would cause runtime failures.
+-keepclassmembers class * extends com.google.android.gms.internal.play_billing.zzgp {
+  <fields>;
+}
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\c22d9cfb1ba96d50d8c9c3175225a61e\transformed\billing-9.1.0\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\9ed4deeb577f6e965ed88e14ff04966f\transformed\app-update-ktx-2.1.0\proguard.txt
+# Proguard cannot process META-INF/versions/9.
+# See https://discuss.gradle.org/t/meta-inf-version-duplicate-error-when-using-proguard/31380
+-dontwarn module-info
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\9ed4deeb577f6e965ed88e14ff04966f\transformed\app-update-ktx-2.1.0\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\c847a2bab325521d78b76b9b264e67ad\transformed\play-services-ads-24.4.0\proguard.txt
+-keep public class com.google.android.gms.ads.internal.ClientApi {
+  <init>();
+}
+
+# When built for Android API level < 30, Proguard warns that it can't find
+# android.telephony.TelephonyDisplayInfo (since it was added only in API level
+# 30). But, all its usages are guarded by runtime checks of the API level.
+# Hence, it is safe to suppress Proguard's warnings.
+-dontwarn android.telephony.TelephonyDisplayInfo
+
+# When built for Android API level < 30, Proguard warns that it can't find
+# android.view.Surface#setFrameRate(float, int) (since it was added only in API
+# level 30). But, all its usages are guarded by runtime checks of the API level.
+# Hence, it is safe to suppress Proguard's warnings.
+-dontwarn android.view.Surface
+
+# When built for Android API level < 31, Proguard warns that it can't find
+# android.media.ApplicationMediaCapabilities (since it was added only in API
+# level 31). But, all its usages are guarded by runtime checks of the API level.
+# Hence, it is safe to suppress Proguard's warnings.
+-dontwarn android.media.ApplicationMediaCapabilities
+
+# When built for Android API level < 31, Proguard warns that it can't find
+# android.media.MediaFeature (since it was added only in API level 31). But,
+# all its usages are guarded by runtime checks of the API level.
+# Hence, it is safe to suppress Proguard's warnings.
+-dontwarn android.media.MediaFeature
+
+# When built for Android API level < 31, Proguard warns that it can't find
+# android.media.ApplicationMediaCapabilities$Builder (since it was added only in
+# API level 31). But, all its usages are guarded by runtime checks of the API
+# level. Hence, it is safe to suppress Proguard's warnings.
+-dontwarn android.media.ApplicationMediaCapabilities$Builder
+
+# When built for Android API level < 31, Proguard warns that it can't find
+# android.media.MediaFeature$HdrType (since it was added only in API level 31).
+# But, all its usages are guarded by runtime checks of the API level.
+# Hence, it is safe to suppress Proguard's warnings.
+-dontwarn android.media.MediaFeature$HdrType
+
+# When built for Android API level < 32, Proguard warns that it can't find
+# android.media.AudioAttributes$Builder (since it was added only in API level
+# 32). But, all its usages are guarded by runtime checks of the API level.
+# Hence, it is safe to suppress Proguard's warnings.
+-dontwarn android.media.AudioAttributes$Builder
+
+# When built for Android API level < 33, Proguard warns that it can't find
+# android.adservices.measurement.MeasurementManager (since it was added only
+# in API level 33). But, all its usages are guarded by runtime checks of the
+# API level. Hence, it is safe to suppress Proguard's warnings.
+-dontwarn android.adservices.measurement.MeasurementManager
+
+# When built for Android API level < 33, Proguard warns that it can't find
+# javax.lang.model.element.Modifier (since it was added only in API level 33).
+# But, all its usages are guarded by runtime checks of the API level. Hence, it
+# is safe to suppress Proguard's warnings.
+-dontwarn javax.lang.model.element.Modifier
+
+# These are checked at runtime for whether they exist, so it is fine if the API level doesn't include these.
+-dontwarn android.content.pm.ApkChecksum
+-dontwarn android.content.pm.PackageManager$OnChecksumsReadyListener
+# Only for the requestChecksums method, but sadly -dontwarn can't take just a single method.
+-dontwarn android.content.pm.PackageManager
+
+# We keep all fields for every generated proto file as the runtime uses
+# reflection over them that ProGuard cannot detect. Without this keep
+# rule, fields may be removed that would cause runtime failures.
+-keepclassmembers class * extends com.google.android.gms.internal.ads.zzgyv {
+  <fields>;
+}
+
+# Auto-generated proguard rule(s) with obfuscated symbol
+-dontwarn com.google.android.gms.ads.internal.util.zzx
+
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\c847a2bab325521d78b76b9b264e67ad\transformed\play-services-ads-24.4.0\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\4ba51857ca89a27c7c6697d86fbeb369\transformed\play-services-ads-api-24.4.0\proguard.txt
+# Keep implementations of the AdMob mediation adapter interfaces. Adapters for
+# third party ad networks implement these interfaces and are invoked by the
+# AdMob SDK via reflection.
+
+-keep class * implements com.google.android.gms.ads.mediation.MediationAdapter {
+  public *;
+}
+-keep class * implements com.google.ads.mediation.MediationAdapter {
+  public *;
+}
+-keep class * implements com.google.android.gms.ads.mediation.customevent.CustomEvent {
+  public *;
+}
+-keep class * implements com.google.ads.mediation.customevent.CustomEvent {
+  public *;
+}
+-keep class * extends com.google.android.gms.ads.mediation.MediationAdNetworkAdapter {
+  public *;
+}
+-keep class * extends com.google.android.gms.ads.mediation.Adapter {
+  public *;
+}
+
+# Keep classes used for offline ads created by reflection. WorkManagerUtil is
+# created reflectively by callers within GMSCore and OfflineNotificationPoster
+# is created reflectively by WorkManager.
+-keep class com.google.android.gms.ads.internal.util.WorkManagerUtil {
+  public *;
+}
+-keep class com.google.android.gms.ads.internal.offline.buffering.OfflineNotificationPoster {
+  public *;
+}
+-keep class com.google.android.gms.ads.internal.offline.buffering.OfflinePingSender {
+  public *;
+}
+
+# Keeps the entry for full SDK to access via reflection.
+-keep class com.google.android.gms.ads.internal.client.LiteSdkInfo {
+  public *;
+}
+
+# Keeps the entry for first party plugins to access via reflection.
+-keep class com.google.android.gms.ads.MobileAds {
+  private void setPlugin(java.lang.String);
+}
+
+# Keep recordEvent API for Immersive SDK to access via reflection.
+-keep class com.google.android.gms.ads.nativead.NativeAd {
+  protected abstract void recordEvent(android.os.Bundle);
+}
+
+# We keep all fields for every generated proto file as the runtime uses
+# reflection over them that ProGuard cannot detect. Without this keep
+# rule, fields may be removed that would cause runtime failures.
+-keepclassmembers class * extends com.google.android.gms.internal.ads.zzgyv {
+  <fields>;
+}
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\4ba51857ca89a27c7c6697d86fbeb369\transformed\play-services-ads-api-24.4.0\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\cc37d5299142482d8135153f2da72481\transformed\play-services-measurement-22.1.2\proguard.txt
+# We keep all fields for every generated proto file as the runtime uses
+# reflection over them that ProGuard cannot detect. Without this keep
+# rule, fields may be removed that would cause runtime failures.
+-keepclassmembers class * extends com.google.android.gms.internal.measurement.zzjt {
+  <fields>;
+}
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\cc37d5299142482d8135153f2da72481\transformed\play-services-measurement-22.1.2\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\f6346f9cd142234da814c82dee2afe34\transformed\play-services-measurement-api-22.1.2\proguard.txt
+# Can be removed once we pull in a dependency on firebase-common that includes
+# https://github.com/firebase/firebase-android-sdk/pull/1472/commits/856f1ca1151cdd88679bbc778892f23dfa34fc06#diff-a2ed34b5a38b4c6c686b09e54865eb48
+-dontwarn com.google.auto.value.AutoValue
+-dontwarn com.google.auto.value.AutoValue$Builder
+
+# We keep all fields for every generated proto file as the runtime uses
+# reflection over them that ProGuard cannot detect. Without this keep
+# rule, fields may be removed that would cause runtime failures.
+-keepclassmembers class * extends com.google.android.gms.internal.measurement.zzjt {
+  <fields>;
+}
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\f6346f9cd142234da814c82dee2afe34\transformed\play-services-measurement-api-22.1.2\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\dbf70ff734489f127cfef3fdce0fadf6\transformed\play-services-measurement-sdk-22.1.2\proguard.txt
+# We keep all fields for every generated proto file as the runtime uses
+# reflection over them that ProGuard cannot detect. Without this keep
+# rule, fields may be removed that would cause runtime failures.
+-keepclassmembers class * extends com.google.android.gms.internal.measurement.zzjt {
+  <fields>;
+}
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\dbf70ff734489f127cfef3fdce0fadf6\transformed\play-services-measurement-sdk-22.1.2\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\e3b14361e7f18bf2d5515130068d10c4\transformed\play-services-measurement-impl-22.1.2\proguard.txt
+# We keep all fields for every generated proto file as the runtime uses
+# reflection over them that ProGuard cannot detect. Without this keep
+# rule, fields may be removed that would cause runtime failures.
+-keepclassmembers class * extends com.google.android.gms.internal.measurement.zzjt {
+  <fields>;
+}
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\e3b14361e7f18bf2d5515130068d10c4\transformed\play-services-measurement-impl-22.1.2\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\d27856df7ac9fcb075e03160ebc1e448\transformed\play-services-base-18.5.0\proguard.txt
+# b/35135904 Ensure that proguard will not strip the mResultGuardian.
+-keepclassmembers class com.google.android.gms.common.api.internal.BasePendingResult {
+  com.google.android.gms.common.api.internal.BasePendingResult$ReleasableResultGuardian mResultGuardian;
+}
+
+
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\d27856df7ac9fcb075e03160ebc1e448\transformed\play-services-base-18.5.0\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\83c896624ebdf7836d22d4977797f9b6\transformed\firebase-common-21.0.0\proguard.txt
+-dontwarn com.google.firebase.platforminfo.KotlinDetector
+-dontwarn com.google.auto.value.AutoValue
+-dontwarn com.google.auto.value.AutoValue$Builder
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\83c896624ebdf7836d22d4977797f9b6\transformed\firebase-common-21.0.0\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\b9fcad15b4fac2d464e574f27636c229\transformed\work-runtime-2.7.0\proguard.txt
+-keep class * extends androidx.work.Worker
+-keep class * extends androidx.work.InputMerger
+# Keep all constructors on ListenableWorker, Worker (also marked with @Keep)
+-keep public class * extends androidx.work.ListenableWorker {
+    public <init>(...);
+}
+# We need to keep WorkerParameters for the ListenableWorker constructor
+-keep class androidx.work.WorkerParameters
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\b9fcad15b4fac2d464e574f27636c229\transformed\work-runtime-2.7.0\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\42d264f353e1ceaade96d6b2bce248a0\transformed\room-runtime-release\proguard.txt
+-keep class * extends androidx.room.RoomDatabase { void <init>(); }
+-dontwarn androidx.room.paging.**
+-dontwarn androidx.lifecycle.LiveData
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\42d264f353e1ceaade96d6b2bce248a0\transformed\room-runtime-release\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\e4b4520b2f8733b8e7386ed14e2c490c\transformed\room-ktx-2.7.1\proguard.txt
+# Intentionally empty proguard rules to indicate this library is safe to shrink
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\e4b4520b2f8733b8e7386ed14e2c490c\transformed\room-ktx-2.7.1\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\ad58cbb7497b6eca1742c728186d8dd2\transformed\animation-core-release\proguard.txt
+# Copyright (C) 2020 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Keep all the functions created to throw an exception. We don't want these functions to be
+# inlined in any way, which R8 will do by default. The whole point of these functions is to
+# reduce the amount of code generated at the call site.
+-keepclassmembers,allowshrinking,allowobfuscation class androidx.compose.**.* {
+    static void throw*Exception(...);
+    static void throw*ExceptionForNullCheck(...);
+    # For methods returning Nothing
+    static java.lang.Void throw*Exception(...);
+    static java.lang.Void throw*ExceptionForNullCheck(...);
+}
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\ad58cbb7497b6eca1742c728186d8dd2\transformed\animation-core-release\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\543acd91e2bd5a7c73c92c7ece089f37\transformed\material-ripple-release\proguard.txt
+# Intentionally empty proguard rules to indicate this library is safe to shrink
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\543acd91e2bd5a7c73c92c7ece089f37\transformed\material-ripple-release\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\2ddbd53917ea301197c7fc2bb7233469\transformed\animation-release\proguard.txt
+# Intentionally empty proguard rules to indicate this library is safe to shrink
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\2ddbd53917ea301197c7fc2bb7233469\transformed\animation-release\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\7dc205ded8e625689ad950af2a66c136\transformed\foundation-layout-release\proguard.txt
+# Copyright (C) 2020 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Keep all the functions created to throw an exception. We don't want these functions to be
+# inlined in any way, which R8 will do by default. The whole point of these functions is to
+# reduce the amount of code generated at the call site.
+-keepclassmembers,allowshrinking,allowobfuscation class androidx.compose.**.* {
+    static void throw*Exception(...);
+    static void throw*ExceptionForNullCheck(...);
+    # For methods returning Nothing
+    static java.lang.Void throw*Exception(...);
+    static java.lang.Void throw*ExceptionForNullCheck(...);
+}
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\7dc205ded8e625689ad950af2a66c136\transformed\foundation-layout-release\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\c9c48f6b21712a63b09c79334756b387\transformed\foundation-release\proguard.txt
+# Copyright (C) 2020 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Keep all the functions created to throw an exception. We don't want these functions to be
+# inlined in any way, which R8 will do by default. The whole point of these functions is to
+# reduce the amount of code generated at the call site.
+-keepclassmembers,allowshrinking,allowobfuscation class androidx.compose.**.* {
+    static void throw*Exception(...);
+    # For methods returning Nothing
+    static java.lang.Void throw*Exception(...);
+}
+
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\c9c48f6b21712a63b09c79334756b387\transformed\foundation-release\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\bfa9d06801b7fa964ff505b658ab466c\transformed\ui-unit-release\proguard.txt
+# Copyright (C) 2020 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Keep all the functions created to throw an exception. We don't want these functions to be
+# inlined in any way, which R8 will do by default. The whole point of these functions is to
+# reduce the amount of code generated at the call site.
+-keepclassmembers,allowshrinking,allowobfuscation class androidx.compose.**.* {
+    static void throw*Exception(...);
+    static void throw*ExceptionForNullCheck(...);
+    # For methods returning Nothing
+    static java.lang.Void throw*Exception(...);
+    static java.lang.Void throw*ExceptionForNullCheck(...);
+}
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\bfa9d06801b7fa964ff505b658ab466c\transformed\ui-unit-release\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\5f4e1dd91ee033105b848e7937cb9369\transformed\ui-geometry-release\proguard.txt
+# Intentionally empty proguard rules to indicate this library is safe to shrink
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\5f4e1dd91ee033105b848e7937cb9369\transformed\ui-geometry-release\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\031b007c2bb511301127051919781236\transformed\ui-util-release\proguard.txt
+# Copyright (C) 2020 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Keep all the functions created to throw an exception. We don't want these functions to be
+# inlined in any way, which R8 will do by default. The whole point of these functions is to
+# reduce the amount of code generated at the call site.
+-keepclassmembers,allowshrinking,allowobfuscation class androidx.compose.**.* {
+    static void throw*Exception(...);
+    static void throw*ExceptionForNullCheck(...);
+    # For methods returning Nothing
+    static java.lang.Void throw*Exception(...);
+    static java.lang.Void throw*ExceptionForNullCheck(...);
+}
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\031b007c2bb511301127051919781236\transformed\ui-util-release\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\f93b0279c7fbef1572172f7ee4b0edfc\transformed\ui-text-release\proguard.txt
+# Copyright (C) 2020 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Keep all the functions created to throw an exception. We don't want these functions to be
+# inlined in any way, which R8 will do by default. The whole point of these functions is to
+# reduce the amount of code generated at the call site.
+-keepclassmembers,allowshrinking,allowobfuscation class androidx.compose.**.* {
+    static void throw*Exception(...);
+    static void throw*ExceptionForNullCheck(...);
+    # For methods returning Nothing
+    static java.lang.Void throw*Exception(...);
+    static java.lang.Void throw*ExceptionForNullCheck(...);
+}
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\f93b0279c7fbef1572172f7ee4b0edfc\transformed\ui-text-release\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\da9a0640fe069a31ad00ffd99d2335c3\transformed\ui-tooling-preview-release\proguard.txt
+# Intentionally empty proguard rules to indicate this library is safe to shrink
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\da9a0640fe069a31ad00ffd99d2335c3\transformed\ui-tooling-preview-release\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\6dcd92acc136d7e53dd5c187f50a22cb\transformed\ui-graphics-release\proguard.txt
+# Copyright (C) 2020 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Keep all the functions created to throw an exception. We don't want these functions to be
+# inlined in any way, which R8 will do by default. The whole point of these functions is to
+# reduce the amount of code generated at the call site.
+-keepclassmembers,allowshrinking,allowobfuscation class androidx.compose.**.* {
+    static void throw*Exception(...);
+    static void throw*ExceptionForNullCheck(...);
+    # For methods returning Nothing
+    static java.lang.Void throw*Exception(...);
+    static java.lang.Void throw*ExceptionForNullCheck(...);
+}
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\6dcd92acc136d7e53dd5c187f50a22cb\transformed\ui-graphics-release\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\b9575430fc49e8ef4aaea4d81e88681c\transformed\ui-release\proguard.txt
+# Copyright (C) 2020 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# We supply these as stubs and are able to link to them at runtime
+# because they are hidden public classes in Android. We don't want
+# R8 to complain about them not being there during optimization.
+-dontwarn android.view.RenderNode
+-dontwarn android.view.DisplayListCanvas
+-dontwarn android.view.HardwareCanvas
+
+-keepclassmembers class androidx.compose.ui.platform.ViewLayerContainer {
+    protected void dispatchGetDisplayList();
+}
+
+-keepclassmembers class androidx.compose.ui.platform.AndroidComposeView {
+    android.view.View findViewByAccessibilityIdTraversal(int);
+}
+
+# Users can create Modifier.Node instances that implement multiple Modifier.Node interfaces,
+# so we cannot tell whether two modifier.node instances are of the same type without using
+# reflection to determine the class type. See b/265188224 for more context.
+-keep,allowshrinking class * extends androidx.compose.ui.node.ModifierNodeElement
+
+# Keep all the functions created to throw an exception. We don't want these functions to be
+# inlined in any way, which R8 will do by default. The whole point of these functions is to
+# reduce the amount of code generated at the call site.
+-keepclassmembers,allowshrinking,allowobfuscation class androidx.compose.**.* {
+    static void throw*Exception(...);
+    static void throw*ExceptionForNullCheck(...);
+    # For methods returning Nothing
+    static java.lang.Void throw*Exception(...);
+    static java.lang.Void throw*ExceptionForNullCheck(...);
+    # For functions generating error messages
+    static java.lang.String exceptionMessage*(...);
+    java.lang.String exceptionMessage*(...);
+}
+
+# When pointer input modifier nodes are added dynamically and have the same keys (common when
+# developers `Unit` for their keys), we need a way to differentiate them and using a
+# functional interface and comparing classes allows us to do that.
+-keepnames class androidx.compose.ui.input.pointer.PointerInputEventHandler {
+    *;
+}
+
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\b9575430fc49e8ef4aaea4d81e88681c\transformed\ui-release\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\0d452ec53442590cf66fcaf7e22441f2\transformed\media3-extractor-1.4.1\proguard.txt
+# Proguard rules specific to the extractor module.
+
+# Methods accessed via reflection in DefaultExtractorsFactory
+-dontnote androidx.media3.decoder.flac.FlacExtractor
+-keepclassmembers class androidx.media3.decoder.flac.FlacExtractor {
+  <init>(int);
+}
+-dontnote androidx.media3.decoder.flac.FlacLibrary
+-keepclassmembers class androidx.media3.decoder.flac.FlacLibrary {
+  public static boolean isAvailable();
+}
+-dontnote androidx.media3.decoder.midi.MidiExtractor
+-keepclassmembers class androidx.media3.decoder.midi.MidiExtractor {
+  <init>();
+}
+
+# Don't warn about checkerframework and Kotlin annotations
+-dontwarn org.checkerframework.**
+-dontwarn kotlin.annotations.jvm.**
+-dontwarn javax.annotation.**
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\0d452ec53442590cf66fcaf7e22441f2\transformed\media3-extractor-1.4.1\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\c73f14d6b5a12ceee1f425aa957c3953\transformed\media3-datasource-1.4.1\proguard.txt
+# Proguard rules specific to the DataSource module.
+
+# Constant folding for resource integers may mean that a resource passed to this method appears to be unused. Keep the method to prevent this from happening.
+-keepclassmembers class androidx.media3.datasource.RawResourceDataSource {
+  public static android.net.Uri buildRawResourceUri(int);
+}
+
+# Constructors accessed via reflection in DefaultDataSource
+-dontnote androidx.media3.datasource.rtmp.RtmpDataSource
+-keepclassmembers class androidx.media3.datasource.rtmp.RtmpDataSource {
+  <init>();
+}
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\c73f14d6b5a12ceee1f425aa957c3953\transformed\media3-datasource-1.4.1\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\81fc3589ece4b824cd0835222f9518df\transformed\media3-common-1.4.1\proguard.txt
+# Proguard rules specific to the common module.
+
+# Don't warn about checkerframework and Kotlin annotations
+-dontwarn org.checkerframework.**
+-dontwarn kotlin.annotations.jvm.**
+-dontwarn javax.annotation.**
+
+# From https://github.com/google/guava/wiki/UsingProGuardWithGuava
+-dontwarn java.lang.ClassValue
+-dontwarn java.lang.SafeVarargs
+-dontwarn javax.lang.model.element.Modifier
+-dontwarn sun.misc.Unsafe
+
+# Don't warn about Guava's compile-only dependencies.
+# These lines are needed for ProGuard but not R8.
+-dontwarn com.google.errorprone.annotations.**
+-dontwarn com.google.j2objc.annotations.**
+-dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
+
+# Workaround for https://issuetracker.google.com/issues/112297269
+# This is needed for ProGuard but not R8.
+-keepclassmembernames class com.google.common.base.Function { *; }
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\81fc3589ece4b824cd0835222f9518df\transformed\media3-common-1.4.1\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\071f7da8aa07d59baf96825f4a92e5de\transformed\media3-exoplayer-1.4.1\proguard.txt
+# Proguard rules specific to the core module.
+
+# Constructors accessed via reflection in DefaultRenderersFactory
+-dontnote androidx.media3.decoder.vp9.LibvpxVideoRenderer
+-keepclassmembers class androidx.media3.decoder.vp9.LibvpxVideoRenderer {
+  <init>(long, android.os.Handler, androidx.media3.exoplayer.video.VideoRendererEventListener, int);
+}
+-dontnote androidx.media3.decoder.av1.Libgav1VideoRenderer
+-keepclassmembers class androidx.media3.decoder.av1.Libgav1VideoRenderer {
+  <init>(long, android.os.Handler, androidx.media3.exoplayer.video.VideoRendererEventListener, int);
+}
+-dontnote androidx.media3.decoder.ffmpeg.ExperimentalFfmpegVideoRenderer
+-keepclassmembers class androidx.media3.decoder.ffmpeg.ExperimentalFfmpegVideoRenderer {
+  <init>(long, android.os.Handler, androidx.media3.exoplayer.video.VideoRendererEventListener, int);
+}
+-dontnote androidx.media3.decoder.opus.LibopusAudioRenderer
+-keepclassmembers class androidx.media3.decoder.opus.LibopusAudioRenderer {
+  <init>(android.os.Handler, androidx.media3.exoplayer.audio.AudioRendererEventListener, androidx.media3.exoplayer.audio.AudioSink);
+}
+-dontnote androidx.media3.decoder.flac.LibflacAudioRenderer
+-keepclassmembers class androidx.media3.decoder.flac.LibflacAudioRenderer {
+  <init>(android.os.Handler, androidx.media3.exoplayer.audio.AudioRendererEventListener, androidx.media3.exoplayer.audio.AudioSink);
+}
+-dontnote androidx.media3.decoder.ffmpeg.FfmpegAudioRenderer
+-keepclassmembers class androidx.media3.decoder.ffmpeg.FfmpegAudioRenderer {
+  <init>(android.os.Handler, androidx.media3.exoplayer.audio.AudioRendererEventListener, androidx.media3.exoplayer.audio.AudioSink);
+}
+-dontnote androidx.media3.decoder.midi.MidiRenderer
+-keepclassmembers class androidx.media3.decoder.midi.MidiRenderer {
+  <init>(android.content.Context);
+}
+
+# Constructors accessed via reflection in DefaultDownloaderFactory
+-dontnote androidx.media3.exoplayer.dash.offline.DashDownloader
+-keepclassmembers class androidx.media3.exoplayer.dash.offline.DashDownloader {
+  <init>(androidx.media3.common.MediaItem, androidx.media3.datasource.cache.CacheDataSource$Factory, java.util.concurrent.Executor);
+}
+-dontnote androidx.media3.exoplayer.hls.offline.HlsDownloader
+-keepclassmembers class androidx.media3.exoplayer.hls.offline.HlsDownloader {
+  <init>(androidx.media3.common.MediaItem, androidx.media3.datasource.cache.CacheDataSource$Factory, java.util.concurrent.Executor);
+}
+-dontnote androidx.media3.exoplayer.smoothstreaming.offline.SsDownloader
+-keepclassmembers class androidx.media3.exoplayer.smoothstreaming.offline.SsDownloader {
+  <init>(androidx.media3.common.MediaItem, androidx.media3.datasource.cache.CacheDataSource$Factory, java.util.concurrent.Executor);
+}
+
+# Constructors accessed via reflection in DefaultMediaSourceFactory
+-dontnote androidx.media3.exoplayer.dash.DashMediaSource$Factory
+-keepclasseswithmembers class androidx.media3.exoplayer.dash.DashMediaSource$Factory {
+  <init>(androidx.media3.datasource.DataSource$Factory);
+}
+-dontnote androidx.media3.exoplayer.hls.HlsMediaSource$Factory
+-keepclasseswithmembers class androidx.media3.exoplayer.hls.HlsMediaSource$Factory {
+  <init>(androidx.media3.datasource.DataSource$Factory);
+}
+-dontnote androidx.media3.exoplayer.smoothstreaming.SsMediaSource$Factory
+-keepclasseswithmembers class androidx.media3.exoplayer.smoothstreaming.SsMediaSource$Factory {
+  <init>(androidx.media3.datasource.DataSource$Factory);
+}
+-dontnote androidx.media3.exoplayer.rtsp.RtspMediaSource$Factory
+-keepclasseswithmembers class androidx.media3.exoplayer.rtsp.RtspMediaSource$Factory {
+  <init>();
+}
+
+# Constructors and methods accessed via reflection in CompositingVideoSinkProvider
+-dontnote androidx.media3.effect.PreviewingSingleInputVideoGraph$Factory
+-keepclasseswithmembers class androidx.media3.effect.PreviewingSingleInputVideoGraph$Factory {
+  <init>(androidx.media3.common.VideoFrameProcessor$Factory);
+}
+-dontnote androidx.media3.effect.DefaultVideoFrameProcessor$Factory$Builder
+-keepclasseswithmembers class androidx.media3.effect.DefaultVideoFrameProcessor$Factory$Builder {
+  androidx.media3.effect.DefaultVideoFrameProcessor$Factory build();
+}
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\071f7da8aa07d59baf96825f4a92e5de\transformed\media3-exoplayer-1.4.1\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\fd322958f7a68ccb581903d9928ebe94\transformed\webkit-1.11.0-alpha02\proguard.txt
+# Copyright 2018 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+# We need to avoid obfuscating the support library boundary interface because
+# this API is shared with the Android Support Library.
+# Note that we only 'keep' the package org.chromium.support_lib_boundary itself,
+# any sub-packages of that package can still be obfuscated.
+-keep public class org.chromium.support_lib_boundary.* { public *; }
+
+# Copyright (C) 2018 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Prevent WebViewClientCompat from being renamed, since chromium depends on this name.
+-keepnames public class androidx.webkit.WebViewClientCompat
+
+# Prevent ProcessGlobalConfig and member sProcessGlobalConfig from being renamed, since chromium
+# depends on this name.
+-keepnames public class androidx.webkit.ProcessGlobalConfig {
+    private static final *** sProcessGlobalConfig;
+}
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\fd322958f7a68ccb581903d9928ebe94\transformed\webkit-1.11.0-alpha02\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\75c26d251ea74b5707131471d7643d5c\transformed\graphics-path-1.0.1\proguard.txt
+-keepclasseswithmembers class androidx.graphics.path.** {
+    native <methods>;
+}
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\75c26d251ea74b5707131471d7643d5c\transformed\graphics-path-1.0.1\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\20fb838f9cffd165444209d210b5a878\transformed\core-1.15.0\proguard.txt
+# Never inline methods, but allow shrinking and obfuscation.
+-keepclassmembernames,allowobfuscation,allowshrinking class androidx.core.view.ViewCompat$Api* {
+  <methods>;
+}
+-keepclassmembernames,allowobfuscation,allowshrinking class androidx.core.view.WindowInsetsCompat$*Impl* {
+  <methods>;
+}
+-keepclassmembernames,allowobfuscation,allowshrinking class androidx.core.app.NotificationCompat$*$Api*Impl {
+  <methods>;
+}
+-keepclassmembernames,allowobfuscation,allowshrinking class androidx.core.os.UserHandleCompat$Api*Impl {
+  <methods>;
+}
+-keepclassmembernames,allowobfuscation,allowshrinking class androidx.core.widget.EdgeEffectCompat$Api*Impl {
+  <methods>;
+}
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\20fb838f9cffd165444209d210b5a878\transformed\core-1.15.0\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\37a192771279f69de616994804ea1852\transformed\lifecycle-livedata-core-ktx-2.9.0\proguard.txt
+# Intentionally empty proguard rules to indicate this library is safe to shrink
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\37a192771279f69de616994804ea1852\transformed\lifecycle-livedata-core-ktx-2.9.0\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\71f99c339a7996eaca47093c3fea73d4\transformed\lifecycle-livedata-core-2.9.0\proguard.txt
+# Intentionally empty proguard rules to indicate this library is safe to shrink
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\71f99c339a7996eaca47093c3fea73d4\transformed\lifecycle-livedata-core-2.9.0\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\7f37732694a97918dd5140e42243e8f8\transformed\lifecycle-service-2.9.0\proguard.txt
+# Intentionally empty proguard rules to indicate this library is safe to shrink
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\7f37732694a97918dd5140e42243e8f8\transformed\lifecycle-service-2.9.0\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\388b3b2bc4919844b4db0f59f51fc3d3\transformed\lifecycle-livedata-2.9.0\proguard.txt
+# Intentionally empty proguard rules to indicate this library is safe to shrink
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\388b3b2bc4919844b4db0f59f51fc3d3\transformed\lifecycle-livedata-2.9.0\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\81d3cb31330b918ddb0ba74d633bf3d1\transformed\rules\lib\META-INF\proguard\androidx-lifecycle-lifecycle-common-java8.pro
+# Intentionally empty proguard rules to indicate this library is safe to shrink
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\81d3cb31330b918ddb0ba74d633bf3d1\transformed\rules\lib\META-INF\proguard\androidx-lifecycle-lifecycle-common-java8.pro
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\7f2e87f0115dda410022622536d4f527\transformed\lifecycle-viewmodel-savedstate-release\proguard.txt
+-keepclassmembers,allowobfuscation class * extends androidx.lifecycle.ViewModel {
+    <init>(androidx.lifecycle.SavedStateHandle);
+}
+
+-keepclassmembers,allowobfuscation class * extends androidx.lifecycle.AndroidViewModel {
+    <init>(android.app.Application,androidx.lifecycle.SavedStateHandle);
+}
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\7f2e87f0115dda410022622536d4f527\transformed\lifecycle-viewmodel-savedstate-release\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\023b90d36233c887cd0d56fec39e9a9d\transformed\lifecycle-viewmodel-release\proguard.txt
+-keepclassmembers,allowobfuscation class * extends androidx.lifecycle.ViewModel {
+    <init>();
+}
+
+-keepclassmembers,allowobfuscation class * extends androidx.lifecycle.AndroidViewModel {
+    <init>(android.app.Application);
+}
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\023b90d36233c887cd0d56fec39e9a9d\transformed\lifecycle-viewmodel-release\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\a7241d5213026c1f057d0151e2bb80e7\transformed\savedstate-ktx-1.3.0\proguard.txt
+# Intentionally empty proguard rules to indicate this library is safe to shrink
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\a7241d5213026c1f057d0151e2bb80e7\transformed\savedstate-ktx-1.3.0\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\31e36a9bad5aada37dba4a4ebd978ac4\transformed\savedstate-compose-release\proguard.txt
+# Workaround for https://issuetracker.google.com/issues/346808608
+#
+# `androidx.savedstate.compose.LocalSavedStateRegistryOwner` will reflectively lookup for
+# `androidx.compose.ui.platform.LocalSavedStateRegistryOwner` to ensure backward compatibility
+# when using SavedState >= 1.3 with Compose <= 1.7.
+#
+# We need to keep the getter if the code using this is included.
+#
+# We need to suppress `ShrinkerUnresolvedReference` because the `LocalComposition` is in a
+# different module.
+#
+#noinspection ShrinkerUnresolvedReference
+-if public class androidx.compose.ui.platform.AndroidCompositionLocals_androidKt {
+    public static *** getLocalSavedStateRegistryOwner();
+}
+-keep public class androidx.compose.ui.platform.AndroidCompositionLocals_androidKt {
+    public static *** getLocalSavedStateRegistryOwner();
+}
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\31e36a9bad5aada37dba4a4ebd978ac4\transformed\savedstate-compose-release\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\353582a8e16d4267b140f5aa052f9cf7\transformed\savedstate-release\proguard.txt
+# Copyright (C) 2019 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+-keepclassmembers,allowobfuscation class * implements androidx.savedstate.SavedStateRegistry$AutoRecreated {
+    <init>();
+}
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\353582a8e16d4267b140f5aa052f9cf7\transformed\savedstate-release\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\28edd80ca2f36eed4d8a14a6000f018d\transformed\lifecycle-runtime-release\proguard.txt
+-keepattributes AnnotationDefault,
+                RuntimeVisibleAnnotations,
+                RuntimeVisibleParameterAnnotations,
+                RuntimeVisibleTypeAnnotations
+
+-keepclassmembers enum androidx.lifecycle.Lifecycle$Event {
+    <fields>;
+}
+
+-keep class * implements androidx.lifecycle.GeneratedAdapter {
+    <init>(...);
+}
+
+-keepclassmembers class ** {
+    @androidx.lifecycle.OnLifecycleEvent *;
+}
+
+# The deprecated `android.app.Fragment` creates `Fragment` instances using reflection.
+# See: b/338958225, b/341537875
+-keepclasseswithmembers,allowobfuscation public class androidx.lifecycle.ReportFragment {
+    public <init>();
+}
+
+# this rule is need to work properly when app is compiled with api 28, see b/142778206
+# Also this rule prevents registerIn from being inlined.
+-keepclassmembers class androidx.lifecycle.ReportFragment$LifecycleCallbacks { *; }
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\28edd80ca2f36eed4d8a14a6000f018d\transformed\lifecycle-runtime-release\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\b8ee9954432f4dac13235f99da5edcea\transformed\lifecycle-viewmodel-ktx-2.9.0\proguard.txt
+# Intentionally empty proguard rules to indicate this library is safe to shrink
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\b8ee9954432f4dac13235f99da5edcea\transformed\lifecycle-viewmodel-ktx-2.9.0\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\7b2501bfca6f67a9538af5bf81ef7bad\transformed\lifecycle-runtime-compose-release\proguard.txt
+# Workaround for https://issuetracker.google.com/issues/346808608
+#
+# `androidx.lifecycle.compose.LocalLifecycleOwner` will reflectively lookup for
+# `androidx.compose.ui.platform.LocalLifecycleOwner` to ensure backward compatibility
+# when using Lifecycle 2.8+ with Compose 1.6.
+#
+# We need to keep the getter if the code using this is included.
+#
+# We need to suppress `ShrinkerUnresolvedReference` because the `LocalComposition` is in a
+# different module.
+#
+#noinspection ShrinkerUnresolvedReference
+-if public class androidx.compose.ui.platform.AndroidCompositionLocals_androidKt {
+    public static *** getLocalLifecycleOwner();
+}
+-keep public class androidx.compose.ui.platform.AndroidCompositionLocals_androidKt {
+    public static *** getLocalLifecycleOwner();
+}
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\7b2501bfca6f67a9538af5bf81ef7bad\transformed\lifecycle-runtime-compose-release\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\4d987dbcfb4cd5d4ac0264a36e831880\transformed\lifecycle-viewmodel-compose-release\proguard.txt
+# Intentionally empty proguard rules to indicate this library is safe to shrink
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\4d987dbcfb4cd5d4ac0264a36e831880\transformed\lifecycle-viewmodel-compose-release\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\8a4b268d31157e0b182d01b17ccbe359\transformed\lifecycle-process-2.9.0\proguard.txt
+# this rule is need to work properly when app is compiled with api 28, see b/142778206
+-keepclassmembers class * extends androidx.lifecycle.EmptyActivityLifecycleCallbacks { *; }
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\8a4b268d31157e0b182d01b17ccbe359\transformed\lifecycle-process-2.9.0\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\86c1f0892ac98ca5c9e9bf423fde01ba\transformed\runtime-saveable-release\proguard.txt
+# Intentionally empty proguard rules to indicate this library is safe to shrink
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\86c1f0892ac98ca5c9e9bf423fde01ba\transformed\runtime-saveable-release\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\473c81d34055e1f665dcaa7ef7f2a7f5\transformed\runtime-release\proguard.txt
+-assumenosideeffects public class androidx.compose.runtime.ComposerKt {
+    void sourceInformation(androidx.compose.runtime.Composer,java.lang.String);
+    void sourceInformationMarkerStart(androidx.compose.runtime.Composer,int,java.lang.String);
+    void sourceInformationMarkerEnd(androidx.compose.runtime.Composer);
+}
+
+# Composer's class initializer doesn't do anything but create an EMPTY object. Marking the
+# initializers as having no side effects can help encourage shrinkers to merge/devirtualize Composer
+# with ComposerImpl.
+-assumenosideeffects public class androidx.compose.runtime.Composer {
+    void <clinit>();
+}
+-assumenosideeffects public class androidx.compose.runtime.ComposerImpl {
+    void <clinit>();
+}
+
+# Keep all the functions created to throw an exception. We don't want these functions to be
+# inlined in any way, which R8 will do by default. The whole point of these functions is to
+# reduce the amount of code generated at the call site.
+-keepclassmembers,allowshrinking,allowobfuscation class androidx.compose.runtime.** {
+    # java.lang.Void == methods that return Nothing
+    static void throw*Exception(...);
+    static void throw*ExceptionForNullCheck(...);
+    static java.lang.Void throw*Exception(...);
+    static java.lang.Void throw*ExceptionForNullCheck(...);
+
+    # For functions generating error messages
+    static java.lang.String exceptionMessage*(...);
+    java.lang.String exceptionMessage*(...);
+
+    static void compose*RuntimeError(...);
+    static java.lang.Void compose*RuntimeError(...);
+}
+
+
+# Intentionally empty proguard rules to indicate this library is safe to shrink
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\473c81d34055e1f665dcaa7ef7f2a7f5\transformed\runtime-release\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\34e9648602f7350cb4440950e2a688da\transformed\rules\lib\META-INF\com.android.tools\r8-from-1.6.0\coroutines.pro
+# Allow R8 to optimize away the FastServiceLoader.
+# Together with ServiceLoader optimization in R8
+# this results in direct instantiation when loading Dispatchers.Main
+-assumenosideeffects class kotlinx.coroutines.internal.MainDispatcherLoader {
+    boolean FAST_SERVICE_LOADER_ENABLED return false;
+}
+
+-assumenosideeffects class kotlinx.coroutines.internal.FastServiceLoaderKt {
+    boolean ANDROID_DETECTED return true;
+}
+
+# Disable support for "Missing Main Dispatcher", since we always have Android main dispatcher
+-assumenosideeffects class kotlinx.coroutines.internal.MainDispatchersKt {
+    boolean SUPPORT_MISSING return false;
+}
+
+# Statically turn off all debugging facilities and assertions
+-assumenosideeffects class kotlinx.coroutines.DebugKt {
+    boolean getASSERTIONS_ENABLED() return false;
+    boolean getDEBUG() return false;
+    boolean getRECOVER_STACK_TRACES() return false;
+}
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\34e9648602f7350cb4440950e2a688da\transformed\rules\lib\META-INF\com.android.tools\r8-from-1.6.0\coroutines.pro
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\b19c351a835c3e3454344367ff562fe4\transformed\rules\lib\META-INF\proguard\androidx.datastore_datastore-preferences-core.pro
+-keepclassmembers class * extends androidx.datastore.preferences.protobuf.GeneratedMessageLite {
+    <fields>;
+}
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\b19c351a835c3e3454344367ff562fe4\transformed\rules\lib\META-INF\proguard\androidx.datastore_datastore-preferences-core.pro
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\8f16a745ff669649848034f57bef4952\transformed\rules\lib\META-INF\com.android.tools\r8\coroutines.pro
+# When editing this file, update the following files as well:
+# - META-INF/proguard/coroutines.pro
+# - META-INF/com.android.tools/proguard/coroutines.pro
+
+# Most of volatile fields are updated with AFU and should not be mangled
+-keepclassmembers class kotlinx.coroutines.** {
+    volatile <fields>;
+}
+
+# Same story for the standard library's SafeContinuation that also uses AtomicReferenceFieldUpdater
+-keepclassmembers class kotlin.coroutines.SafeContinuation {
+    volatile <fields>;
+}
+
+# These classes are only required by kotlinx.coroutines.debug.AgentPremain, which is only loaded when
+# kotlinx-coroutines-core is used as a Java agent, so these are not needed in contexts where ProGuard is used.
+-dontwarn java.lang.instrument.ClassFileTransformer
+-dontwarn sun.misc.SignalHandler
+-dontwarn java.lang.instrument.Instrumentation
+-dontwarn sun.misc.Signal
+
+# Only used in `kotlinx.coroutines.internal.ExceptionsConstructor`.
+# The case when it is not available is hidden in a `try`-`catch`, as well as a check for Android.
+-dontwarn java.lang.ClassValue
+
+# An annotation used for build tooling, won't be directly accessed.
+-dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\8f16a745ff669649848034f57bef4952\transformed\rules\lib\META-INF\com.android.tools\r8\coroutines.pro
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\08a0f5d6df18360a7b24752c1e6acf99\transformed\play-services-tasks-18.2.0\proguard.txt
+
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\08a0f5d6df18360a7b24752c1e6acf99\transformed\play-services-tasks-18.2.0\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\58d0ddd2fc646ee95115684026eb264d\transformed\audience-network-sdk-6.20.0\proguard.txt
+# Proguard configurations in this file get packaged up in the AAR file and
+# merged with the application proguard rules.
+# For Dynamically Loaded library we want to keep all public classes, so that they are
+# available from internal classes.
+-dontwarn com.facebook.ads.internal.**
+-keeppackagenames com.facebook.*
+-keep public class com.facebook.ads.** {
+   public protected *;
+}
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\58d0ddd2fc646ee95115684026eb264d\transformed\audience-network-sdk-6.20.0\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\6b3d68fa22f15994c4c4e050d34dc03b\transformed\play-services-measurement-sdk-api-22.1.2\proguard.txt
+# We keep all fields for every generated proto file as the runtime uses
+# reflection over them that ProGuard cannot detect. Without this keep
+# rule, fields may be removed that would cause runtime failures.
+-keepclassmembers class * extends com.google.android.gms.internal.measurement.zzjt {
+  <fields>;
+}
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\6b3d68fa22f15994c4c4e050d34dc03b\transformed\play-services-measurement-sdk-api-22.1.2\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\9e44d6bff5aedb3cc31526ab90f2548b\transformed\play-services-measurement-base-22.1.2\proguard.txt
+# We keep all fields for every generated proto file as the runtime uses
+# reflection over them that ProGuard cannot detect. Without this keep
+# rule, fields may be removed that would cause runtime failures.
+-keepclassmembers class * extends com.google.android.gms.internal.measurement.zzjt {
+  <fields>;
+}
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\9e44d6bff5aedb3cc31526ab90f2548b\transformed\play-services-measurement-base-22.1.2\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\d0cac0f8fa4d8f5b7f8d0816aad8e948\transformed\play-services-basement-18.9.0\proguard.txt
+# Needed when building against pre-Marshmallow SDK.
+-dontwarn android.security.NetworkSecurityPolicy
+
+# Needed when building against Marshmallow SDK.
+-dontwarn android.app.Notification
+
+# Protobuf has references not on the Android boot classpath
+-dontwarn sun.misc.Unsafe
+-dontwarn libcore.io.Memory
+
+# Annotations used during internal SDK shrinking.
+-dontwarn com.google.android.apps.common.proguard.**
+
+# Annotations referenced by the SDK but whose definitions are contained in
+# non-required dependencies.
+-dontwarn javax.annotation.**
+-dontwarn org.checkerframework.**
+-dontwarn com.google.errorprone.annotations.**
+-dontwarn org.jspecify.annotations.NullMarked
+
+# Annotations no longer exist. Suppression prevents ProGuard failures in
+# SDKs which depend on earlier versions of play-services-basement.
+-dontwarn com.google.android.gms.common.util.VisibleForTesting
+
+# Proguard flags for consumers of the Google Play services SDK
+# https://developers.google.com/android/guides/setup#add_google_play_services_to_your_project
+
+# Keep SafeParcelable NULL value, needed for reflection by DowngradeableSafeParcel
+-keepclassmembers public class com.google.android.gms.common.internal.safeparcel.SafeParcelable {
+    public static final *** NULL;
+}
+
+# Needed for Parcelable/SafeParcelable classes & their creators to not get renamed, as they are
+# found via reflection.
+-keep class com.google.android.gms.common.internal.ReflectedParcelable
+-keepnames class * implements com.google.android.gms.common.internal.ReflectedParcelable
+-keepclassmembers class * implements android.os.Parcelable {
+  public static final *** CREATOR;
+}
+
+# Keep the classes/members we need for client functionality.
+-keep @interface android.support.annotation.Keep
+-keep @androidx.annotation.Keep class *
+-keepclasseswithmembers class * {
+  @androidx.annotation.Keep <fields>;
+}
+-keepclasseswithmembers class * {
+  @androidx.annotation.Keep <methods>;
+}
+
+# Keep androidX equivalent of above android.support to allow Jetification.
+-keep @interface androidx.annotation.Keep
+-keep @androidx.annotation.Keep class *
+-keepclasseswithmembers class * {
+  @androidx.annotation.Keep <fields>;
+}
+-keepclasseswithmembers class * {
+  @androidx.annotation.Keep <methods>;
+}
+
+# Keep the names of classes/members we need for client functionality.
+-keep @interface com.google.android.gms.common.annotation.KeepName
+-keepnames @com.google.android.gms.common.annotation.KeepName class *
+-keepclassmembernames class * {
+  @com.google.android.gms.common.annotation.KeepName *;
+}
+
+# Keep Dynamite API entry points
+-keep @interface com.google.android.gms.common.util.DynamiteApi
+-keep @com.google.android.gms.common.util.DynamiteApi public class * {
+  public <fields>;
+  public <methods>;
+}
+
+
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\d0cac0f8fa4d8f5b7f8d0816aad8e948\transformed\play-services-basement-18.9.0\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\1c98141c1bf773eaf9f7ffd991ed5acd\transformed\transport-backend-cct-3.3.0\proguard.txt
+-dontwarn com.google.auto.value.AutoValue
+-dontwarn com.google.auto.value.AutoValue$Builder
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\1c98141c1bf773eaf9f7ffd991ed5acd\transformed\transport-backend-cct-3.3.0\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\f3659631bfd3d2535732f66e46cade6a\transformed\rules\lib\META-INF\proguard\okio.pro
+# Animal Sniffer compileOnly dependency to ensure APIs are compatible with older versions of Java.
+-dontwarn org.codehaus.mojo.animal_sniffer.*
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\f3659631bfd3d2535732f66e46cade6a\transformed\rules\lib\META-INF\proguard\okio.pro
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\44e4dbc129429fd683b506e3eebc777d\transformed\rules\lib\META-INF\com.android.tools\r8\kotlinx-serialization-common.pro
+# Keep `Companion` object fields of serializable classes.
+# This avoids serializer lookup through `getDeclaredClasses` as done for named companion objects.
+-if @kotlinx.serialization.Serializable class **
+-keepclassmembers class <1> {
+    static <1>$Companion Companion;
+}
+
+# Keep `serializer()` on companion objects (both default and named) of serializable classes.
+-if @kotlinx.serialization.Serializable class ** {
+    static **$* *;
+}
+-keepclassmembers class <2>$<3> {
+    kotlinx.serialization.KSerializer serializer(...);
+}
+
+# Keep `INSTANCE.serializer()` of serializable objects.
+-if @kotlinx.serialization.Serializable class ** {
+    public static ** INSTANCE;
+}
+-keepclassmembers class <1> {
+    public static <1> INSTANCE;
+    kotlinx.serialization.KSerializer serializer(...);
+}
+
+# @Serializable and @Polymorphic are used at runtime for polymorphic serialization.
+-keepattributes RuntimeVisibleAnnotations,AnnotationDefault
+
+# Don't print notes about potential mistakes or omissions in the configuration for kotlinx-serialization classes
+# See also https://github.com/Kotlin/kotlinx.serialization/issues/1900
+-dontnote kotlinx.serialization.**
+
+# Serialization core uses `java.lang.ClassValue` for caching inside these specified classes.
+# If there is no `java.lang.ClassValue` (for example, in Android), then R8/ProGuard will print a warning.
+# However, since in this case they will not be used, we can disable these warnings
+-dontwarn kotlinx.serialization.internal.ClassValueReferences
+
+# disable optimisation for descriptor field because in some versions of ProGuard, optimization generates incorrect bytecode that causes a verification error
+# see https://github.com/Kotlin/kotlinx.serialization/issues/2719
+-keepclassmembers public class **$$serializer {
+    private ** descriptor;
+}
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\44e4dbc129429fd683b506e3eebc777d\transformed\rules\lib\META-INF\com.android.tools\r8\kotlinx-serialization-common.pro
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\44e4dbc129429fd683b506e3eebc777d\transformed\rules\lib\META-INF\com.android.tools\r8\kotlinx-serialization-r8.pro
+# Rule to save runtime annotations on serializable class.
+# If the R8 full mode is used, annotations are removed from classes-files.
+#
+# For the annotation serializer, it is necessary to read the `Serializable` annotation inside the serializer<T>() function - if it is present,
+# then `SealedClassSerializer` is used, if absent, then `PolymorphicSerializer'.
+#
+# When using R8 full mode, all interfaces will be serialized using `PolymorphicSerializer`.
+#
+# see https://github.com/Kotlin/kotlinx.serialization/issues/2050
+
+ -if @kotlinx.serialization.Serializable class **
+ -keep, allowshrinking, allowoptimization, allowobfuscation, allowaccessmodification class <1>
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\44e4dbc129429fd683b506e3eebc777d\transformed\rules\lib\META-INF\com.android.tools\r8\kotlinx-serialization-r8.pro
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\09d7b31bc3d996c709a55ff28b039f93\transformed\core-viewtree-1.0.0\proguard.txt
+# Intentionally empty proguard rules to indicate this library is safe to shrink
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\09d7b31bc3d996c709a55ff28b039f93\transformed\core-viewtree-1.0.0\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\d5abda783648701eb17df1de3a31b9f4\transformed\sqlite-framework-release\proguard.txt
+# Intentionally empty proguard rules to indicate this library is safe to shrink
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\d5abda783648701eb17df1de3a31b9f4\transformed\sqlite-framework-release\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\8438a8181135649891bf0e2f6482a0b0\transformed\sqlite-release\proguard.txt
+# Intentionally empty proguard rules to indicate this library is safe to shrink
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\8438a8181135649891bf0e2f6482a0b0\transformed\sqlite-release\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\ab362bf7fb1584aadb227396f1ecba60\transformed\versionedparcelable-1.1.1\proguard.txt
+-keep class * implements androidx.versionedparcelable.VersionedParcelable
+-keep public class android.support.**Parcelizer { *; }
+-keep public class androidx.**Parcelizer { *; }
+-keep public class androidx.versionedparcelable.ParcelImpl
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\ab362bf7fb1584aadb227396f1ecba60\transformed\versionedparcelable-1.1.1\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\57316295c106f83d1593ca5d96934c19\transformed\rules\lib\META-INF\proguard\androidx-collection-collection-ktx.pro
+# Intentionally empty proguard rules to indicate this library is safe to shrink
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\57316295c106f83d1593ca5d96934c19\transformed\rules\lib\META-INF\proguard\androidx-collection-collection-ktx.pro
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\9a7da4e7f017bea2508fb85b961a2523\transformed\startup-runtime-1.1.1\proguard.txt
+# It's important that we preserve initializer names, given they are used in the AndroidManifest.xml.
+-keepnames class * extends androidx.startup.Initializer
+
+# These Proguard rules ensures that ComponentInitializers are are neither shrunk nor obfuscated,
+# and are a part of the primary dex file. This is because they are discovered and instantiated
+# during application startup.
+-keep class * extends androidx.startup.Initializer {
+    # Keep the public no-argument constructor while allowing other methods to be optimized.
+    <init>();
+}
+
+-assumenosideeffects class androidx.startup.StartupLogger { public static <methods>; }
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\9a7da4e7f017bea2508fb85b961a2523\transformed\startup-runtime-1.1.1\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\e37275a495b137547aec6bac14220a71\transformed\firebase-components-18.0.0\proguard.txt
+-dontwarn com.google.firebase.components.Component$Instantiation
+-dontwarn com.google.firebase.components.Component$ComponentType
+
+-keep class * implements com.google.firebase.components.ComponentRegistrar
+-keep,allowshrinking interface com.google.firebase.components.ComponentRegistrar
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\e37275a495b137547aec6bac14220a71\transformed\firebase-components-18.0.0\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\b8bca3fa3ea0cc912a0fad78f7ea0f47\transformed\transport-api-3.2.0\proguard.txt
+-dontwarn com.google.auto.value.AutoValue
+-dontwarn com.google.auto.value.AutoValue$Builder
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\b8bca3fa3ea0cc912a0fad78f7ea0f47\transformed\transport-api-3.2.0\proguard.txt
+# The proguard configuration file for the following section is C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\8af109c186fa67d01e230a4f02ad777a\transformed\rules\lib\META-INF\proguard\androidx-annotations.pro
+-keep,allowobfuscation @interface androidx.annotation.Keep
+-keep @androidx.annotation.Keep class * {*;}
+
+-keepclasseswithmembers class * {
+    @androidx.annotation.Keep <methods>;
+}
+
+-keepclasseswithmembers class * {
+    @androidx.annotation.Keep <fields>;
+}
+
+-keepclasseswithmembers class * {
+    @androidx.annotation.Keep <init>(...);
+}
+
+-keepclassmembers,allowobfuscation class * {
+  @androidx.annotation.DoNotInline <methods>;
+}
+
+# End of content from C:\Users\UNIX COMPUTERS\.gradle\caches\8.11.1\transforms\8af109c186fa67d01e230a4f02ad777a\transformed\rules\lib\META-INF\proguard\androidx-annotations.pro
+# The proguard configuration file for the following section is <unknown>
+
+# End of content from <unknown>
