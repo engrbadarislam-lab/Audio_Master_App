@@ -16,12 +16,10 @@ android {
         applicationId = "com.lw.audiomaster"
         minSdk = 24
         targetSdk = 36
-        versionCode = 2
-        versionName = "1.0.1"
+        versionCode = 3
+        versionName = "1.0.3"
         vectorDrawables { useSupportLibrary = true }
 
-        // AdMob App ID. TEST id below — replace with your real AdMob App ID before release.
-        manifestPlaceholders["admobAppId"] = "ca-app-pub-6602019238405837~6435720839"
     }
 
     buildTypes {

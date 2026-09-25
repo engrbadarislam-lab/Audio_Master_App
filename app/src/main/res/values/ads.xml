@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Real Smart Printer AdMob IDs -->
-    <string name="admob_app_id" translatable="false">ca-app-pub-6602019238405837~8095093924</string>
+    <string name="admob_app_id" translatable="false">ca-app-pub-6602019238405837~6435720839</string>
 
     <string name="admob_splash_inter" translatable="false">ca-app-pub-6602019238405837/4288465456</string>
     <string name="admob_intro_banner" translatable="false">ca-app-pub-6602019238405837/2300150225</string>
