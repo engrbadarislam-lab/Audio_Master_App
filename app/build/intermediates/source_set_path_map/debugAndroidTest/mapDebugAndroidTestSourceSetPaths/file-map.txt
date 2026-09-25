@@ -1,0 +1,4 @@
+com.lw.audiomaster.test.app-androidTest-0 E:\Logic Worms Apps\AudioMaster\app\build\generated\res\resValues\androidTest\debug
+com.lw.audiomaster.test.app-mergeDebugAndroidTestResources-1 E:\Logic Worms Apps\AudioMaster\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.lw.audiomaster.test.app-mergeDebugAndroidTestResources-2 E:\Logic Worms Apps\AudioMaster\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.lw.audiomaster.test.app-debugAndroidTest-3 E:\Logic Worms Apps\AudioMaster\app\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources

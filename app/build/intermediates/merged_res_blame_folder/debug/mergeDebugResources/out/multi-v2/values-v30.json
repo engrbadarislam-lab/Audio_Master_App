@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.lw.audiomaster.app-mergeDebugResources-79:/values-v30/values-v30.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\UNIX COMPUTERS\\.gradle\\caches\\8.11.1\\transforms\\676e1deb779f970eb7169b38c97c7369\\transformed\\material3-release\\res\\values-v30\\values-v30.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "72",
+                        "endOffsets": "123"
+                    }
+                }
+            ]
+        }
+    ]
+}

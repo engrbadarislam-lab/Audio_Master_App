@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Real Smart Printer AdMob IDs -->
+    <string name="admob_app_id" translatable="false">ca-app-pub-6602019238405837~8095093924</string>
+
+    <string name="admob_splash_inter" translatable="false">ca-app-pub-6602019238405837/4288465456</string>
+    <string name="admob_intro_banner" translatable="false">ca-app-pub-6602019238405837/2300150225</string>
+    <string name="admob_main_banner" translatable="false">ca-app-pub-6602019238405837/2300150225</string>
+    <string name="admob_global_inter" translatable="false">ca-app-pub-6602019238405837/2304904136</string>
+    <string name="admob_print_inter" translatable="false">ca-app-pub-6602019238405837/2304904136</string>
+    <string name="admob_native" translatable="false">ca-app-pub-6602019238405837/6158032001</string>
+    <string name="admob_native_2" translatable="false">ca-app-pub-6602019238405837/6158032001</string>
+    <string name="admob_app_open" translatable="false">ca-app-pub-6602019238405837/6349603697</string>
+    <string name="admob_rewarded" translatable="false">ca-app-pub-6602019238405837/4214295912</string>
+    <string name="admob_splash_inter_fallback" translatable="false">ca-app-pub-6602019238405837/2304904136</string>
+
+</resources>

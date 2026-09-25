@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2" xmlns:ns2="http://schemas.android.com/tools">
+    <attr format="reference" name="nestedScrollViewStyle"/>
+    <attr format="reference" name="postSplashScreenTheme"/>
+    <attr format="dimension" name="splashScreenIconSize"/>
+    <attr format="reference" name="windowSplashScreenAnimatedIcon"/>
+    <attr format="integer" name="windowSplashScreenAnimationDuration"/>
+    <attr format="color" name="windowSplashScreenBackground"/>
+    <attr format="color" name="windowSplashScreenIconBackgroundColor"/>
+    <bool name="enable_system_alarm_service_default">true</bool>
+    <bool name="enable_system_foreground_service_default">true</bool>
+    <bool name="enable_system_job_service_default">false</bool>
+    <bool name="workmanager_test_configuration">false</bool>
+    <color name="abyss">#FF050914</color>
+    <color name="androidx_core_ripple_material_light">#1f000000</color>
+    <color name="androidx_core_secondary_text_default_material_light">#8a000000</color>
+    <color name="browser_actions_bg_grey">#F5F5F5</color>
+    <color name="browser_actions_divider_color">#1E000000</color>
+    <color name="browser_actions_text_color">#DE000000</color>
+    <color name="browser_actions_title_color">#646464</color>
+    <color name="call_notification_answer_color">#1d873b</color>
+    <color name="call_notification_decline_color">#d93025</color>
+    <color name="common_google_signin_btn_text_dark_default">@android:color/white</color>
+    <color name="common_google_signin_btn_text_dark_disabled">#1F000000</color>
+    <color name="common_google_signin_btn_text_dark_focused">@android:color/black</color>
+    <color name="common_google_signin_btn_text_dark_pressed">@android:color/white</color>
+    <color name="common_google_signin_btn_text_light_default">#90000000</color>
+    <color name="common_google_signin_btn_text_light_disabled">#1F000000</color>
+    <color name="common_google_signin_btn_text_light_focused">#90000000</color>
+    <color name="common_google_signin_btn_text_light_pressed">#DE000000</color>
+    <color name="deep_navy">#FF0A1230</color>
+    <color name="electric_blue">#FF2A6BFF</color>
+    <color name="notification_action_color_filter">#ffffffff</color>
+    <color name="notification_icon_bg_color">#ff9e9e9e</color>
+    <color name="sky_blue">#FF47C2FF</color>
+    <color name="white">#FFFFFFFF</color>
+    <dimen name="browser_actions_context_menu_max_width">500dp</dimen>
+    <dimen name="browser_actions_context_menu_min_padding">20dp</dimen>
+    <dimen name="compat_button_inset_horizontal_material">4dp</dimen>
+    <dimen name="compat_button_inset_vertical_material">6dp</dimen>
+    <dimen name="compat_button_padding_horizontal_material">8dp</dimen>
+    <dimen name="compat_button_padding_vertical_material">4dp</dimen>
+    <dimen name="compat_control_corner_material">2dp</dimen>
+    <dimen name="compat_notification_large_icon_max_height">320dp</dimen>
+    <dimen name="compat_notification_large_icon_max_width">320dp</dimen>
+    <dimen name="notification_action_icon_size">32dp</dimen>
+    <dimen name="notification_action_text_size">13sp</dimen>
+    <dimen name="notification_big_circle_margin">12dp</dimen>
+    <dimen name="notification_content_margin_start">8dp</dimen>
+    <dimen name="notification_large_icon_height">64dp</dimen>
+    <dimen name="notification_large_icon_width">64dp</dimen>
+    <dimen name="notification_main_column_padding_top">10dp</dimen>
+    <dimen name="notification_media_narrow_margin">@dimen/notification_content_margin_start</dimen>
+    <dimen name="notification_right_icon_size">16dp</dimen>
+    <dimen name="notification_right_side_padding_top">4dp</dimen>
+    <dimen name="notification_small_icon_background_padding">3dp</dimen>
+    <dimen name="notification_small_icon_size_as_large">24dp</dimen>
+    <dimen name="notification_subtext_size">13sp</dimen>
+    <dimen name="notification_top_pad">10dp</dimen>
+    <dimen name="notification_top_pad_large_text">5dp</dimen>
+    <dimen name="splashscreen_icon_mask_size_no_background">410dp</dimen>
+    <dimen name="splashscreen_icon_mask_size_with_background">342dp</dimen>
+    <dimen name="splashscreen_icon_mask_stroke_no_background">109dp</dimen>
+    <dimen name="splashscreen_icon_mask_stroke_with_background">92dp</dimen>
+    <dimen name="splashscreen_icon_size">?splashScreenIconSize</dimen>
+    <dimen name="splashscreen_icon_size_no_background">288dp</dimen>
+    <dimen name="splashscreen_icon_size_with_background">240dp</dimen>
+    <drawable name="notification_template_icon_bg">#3333B5E5</drawable>
+    <drawable name="notification_template_icon_low_bg">#0cffffff</drawable>
+    <item name="accessibility_action_clickable_span" type="id"/>
+    <item name="accessibility_custom_action_0" type="id"/>
+    <item name="accessibility_custom_action_1" type="id"/>
+    <item name="accessibility_custom_action_10" type="id"/>
+    <item name="accessibility_custom_action_11" type="id"/>
+    <item name="accessibility_custom_action_12" type="id"/>
+    <item name="accessibility_custom_action_13" type="id"/>
+    <item name="accessibility_custom_action_14" type="id"/>
+    <item name="accessibility_custom_action_15" type="id"/>
+    <item name="accessibility_custom_action_16" type="id"/>
+    <item name="accessibility_custom_action_17" type="id"/>
+    <item name="accessibility_custom_action_18" type="id"/>
+    <item name="accessibility_custom_action_19" type="id"/>
+    <item name="accessibility_custom_action_2" type="id"/>
+    <item name="accessibility_custom_action_20" type="id"/>
+    <item name="accessibility_custom_action_21" type="id"/>
+    <item name="accessibility_custom_action_22" type="id"/>
+    <item name="accessibility_custom_action_23" type="id"/>
+    <item name="accessibility_custom_action_24" type="id"/>
+    <item name="accessibility_custom_action_25" type="id"/>
+    <item name="accessibility_custom_action_26" type="id"/>
+    <item name="accessibility_custom_action_27" type="id"/>
+    <item name="accessibility_custom_action_28" type="id"/>
+    <item name="accessibility_custom_action_29" type="id"/>
+    <item name="accessibility_custom_action_3" type="id"/>
+    <item name="accessibility_custom_action_30" type="id"/>
+    <item name="accessibility_custom_action_31" type="id"/>
+    <item name="accessibility_custom_action_4" type="id"/>
+    <item name="accessibility_custom_action_5" type="id"/>
+    <item name="accessibility_custom_action_6" type="id"/>
+    <item name="accessibility_custom_action_7" type="id"/>
+    <item name="accessibility_custom_action_8" type="id"/>
+    <item name="accessibility_custom_action_9" type="id"/>
+    <item name="androidx_compose_ui_view_composition_context" type="id"/>
+    <item name="compose_view_saveable_id_tag" type="id"/>
+    <item name="consume_window_insets_tag" type="id"/>
+    <item name="hide_graphics_layer_in_inspector_tag" type="id"/>
+    <item name="hide_in_inspector_tag" type="id"/>
+    <item name="inspection_slot_table_set" type="id"/>
+    <item name="is_pooling_container_tag" type="id"/>
+    <item name="line1" type="id"/>
+    <item name="line3" type="id"/>
+    <item name="nav_controller_view_tag" type="id"/>
+    <item name="offline_dialog_advertiser_name" type="id"/>
+    <item name="offline_dialog_image" type="id"/>
+    <item name="pooling_container_listener_holder_tag" type="id"/>
+    <item name="report_drawn" type="id"/>
+    <item name="tag_accessibility_actions" type="id"/>
+    <item name="tag_accessibility_clickable_spans" type="id"/>
+    <item name="tag_accessibility_heading" type="id"/>
+    <item name="tag_accessibility_pane_title" type="id"/>
+    <item name="tag_on_apply_window_listener" type="id"/>
+    <item name="tag_on_receive_content_listener" type="id"/>
+    <item name="tag_on_receive_content_mime_types" type="id"/>
+    <item name="tag_screen_reader_focusable" type="id"/>
+    <item name="tag_state_description" type="id"/>
+    <item name="tag_transition_group" type="id"/>
+    <item name="tag_unhandled_key_event_manager" type="id"/>
+    <item name="tag_unhandled_key_listeners" type="id"/>
+    <item name="tag_window_insets_animation_callback" type="id"/>
+    <item name="text" type="id"/>
+    <item name="text2" type="id"/>
+    <item name="title" type="id"/>
+    <id name="view_tree_disjoint_parent"/>
+    <id name="view_tree_lifecycle_owner"/>
+    <id name="view_tree_on_back_pressed_dispatcher_owner"/>
+    <id name="view_tree_saved_state_registry_owner"/>
+    <id name="view_tree_view_model_store_owner"/>
+    <item name="wrapped_composition_tag" type="id"/>
+    <integer name="default_icon_animation_duration">10000</integer>
+    <integer name="google_play_services_version">12451000</integer>
+    <integer name="m3c_window_layout_in_display_cutout_mode">1</integer>
+    <integer name="status_bar_notification_info_maxnum">999</integer>
+    <string name="action_continue">Continue</string>
+    <string name="action_done">Done</string>
+    <string name="action_get_started">Get Started</string>
+    <string name="action_skip">Skip</string>
+    <string name="action_start">Start</string>
+    <string name="androidx_startup" translatable="false">androidx.startup</string>
+    <string name="app_name">AudioMaster</string>
+    <string name="app_tagline">Studio-grade mastering in your pocket</string>
+    <string name="autofill">Autofill</string>
+    <string name="badge_active">ACTIVE</string>
+    <string name="badge_best_value">BEST VALUE</string>
+    <string name="badge_pay_once">PAY ONCE</string>
+    <string name="badge_unlock">UNLOCK</string>
+    <string name="benefit_export">Lossless WAV, 24-bit &amp; FLAC export</string>
+    <string name="benefit_loudness">Maximum loudness + stereo widening</string>
+    <string name="benefit_no_ads">Remove all ads</string>
+    <string name="benefit_presets">All 12 genre &amp; voice EQ presets</string>
+    <string name="benefit_unlimited">Unlimited saved projects, no watermarks</string>
+    <string name="call_notification_answer_action">Answer</string>
+    <string name="call_notification_answer_video_action">Video</string>
+    <string name="call_notification_decline_action">Decline</string>
+    <string name="call_notification_hang_up_action">Hang Up</string>
+    <string name="call_notification_incoming_text">Incoming call</string>
+    <string name="call_notification_ongoing_text">Ongoing call</string>
+    <string name="call_notification_screening_text">Screening an incoming call</string>
+    <string name="close_drawer">"Close navigation menu"</string>
+    <string name="close_sheet">"Close sheet"</string>
+    <string msgid="2523291102206661146" name="common_google_play_services_enable_button">Enable</string>
+    <string msgid="227660514972886228" name="common_google_play_services_enable_text"><ns1:g id="app_name">%1$s</ns1:g> won\'t work unless you enable Google Play services.</string>
+    <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Enable Google Play services</string>
+    <string msgid="7153882981874058840" name="common_google_play_services_install_button">Install</string>
+    <string name="common_google_play_services_install_text"><ns1:g id="app_name">%1$s</ns1:g> won\'t run without Google Play services, which are missing from your device.</string>
+    <string msgid="7215213145546190223" name="common_google_play_services_install_title">Get Google Play services</string>
+    <string name="common_google_play_services_notification_channel_name">Google Play services availability</string>
+    <string name="common_google_play_services_notification_ticker">Google Play services error</string>
+    <string name="common_google_play_services_unknown_issue"><ns1:g id="app_name">%1$s</ns1:g> is having trouble with Google Play services. Please try again.</string>
+    <string name="common_google_play_services_unsupported_text"><ns1:g id="app_name">%1$s</ns1:g> won\'t run without Google Play services, which are not supported by your device.</string>
+    <string msgid="6556509956452265614" name="common_google_play_services_update_button">Update</string>
+    <string msgid="9053896323427875356" name="common_google_play_services_update_text"><ns1:g id="app_name">%1$s</ns1:g> won\'t run unless you update Google Play services.</string>
+    <string msgid="6006316683626838685" name="common_google_play_services_update_title">Update Google Play services</string>
+    <string name="common_google_play_services_updating_text"><ns1:g id="app_name">%1$s</ns1:g> won\'t run without Google Play services, which are currently updating.</string>
+    <string name="common_google_play_services_wear_update_text">New version of Google Play services needed. It will update itself shortly.</string>
+    <string name="common_open_on_phone">Open on phone</string>
+    <string name="common_signin_button_text">Sign in</string>
+    <string name="common_signin_button_text_long">Sign in with Google</string>
+    <string name="copy_toast_msg">Link copied to clipboard</string>
+    <string name="default_error_message">"Invalid input"</string>
+    <string name="default_popup_window_title" ns2:ignore="ExtraTranslation">"Pop-Up Window"</string>
+    <string name="dropdown_menu">"Dropdown menu"</string>
+    <string name="exo_download_completed">Download completed</string>
+    <string name="exo_download_description">Download</string>
+    <string name="exo_download_downloading">Downloading</string>
+    <string name="exo_download_failed">Download failed</string>
+    <string name="exo_download_notification_channel_name">Downloads</string>
+    <string name="exo_download_paused">Downloads paused</string>
+    <string name="exo_download_paused_for_network">Downloads waiting for network</string>
+    <string name="exo_download_paused_for_wifi">Downloads waiting for WiFi</string>
+    <string name="exo_download_removing">Removing downloads</string>
+    <string name="exported">Exported</string>
+    <string name="fallback_menu_item_copy_link">Copy link</string>
+    <string name="fallback_menu_item_open_in_browser">Open in browser</string>
+    <string name="fallback_menu_item_share_link">Share link</string>
+    <string name="gcm_defaultSenderId" translatable="false">7986666173</string>
+    <string name="go_pro">Go Pro</string>
+    <string name="go_pro_sub">No ads · all presets + lossless export</string>
+    <string name="google_api_key" translatable="false">AIzaSyD3G2VBBY_UTAGsDbG8J6fthxQk7hlsqxA</string>
+    <string name="google_app_id" translatable="false">1:7986666173:android:82f3fa1f778fe26465b5d4</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyD3G2VBBY_UTAGsDbG8J6fthxQk7hlsqxA</string>
+    <string name="google_storage_bucket" translatable="false">audio-master-ab44b.firebasestorage.app</string>
+    <string name="home_master_new">Master new audio</string>
+    <string name="home_master_sub">Import a song, beat, podcast or video</string>
+    <string name="home_no_projects">No projects yet</string>
+    <string name="home_no_projects_sub">Master your first track to see it here</string>
+    <string name="home_quick_tools">Quick tools</string>
+    <string name="home_recent">Recent projects</string>
+    <string name="home_see_all">See all</string>
+    <string name="home_welcome">Welcome back</string>
+    <string name="in_progress">In progress</string>
+    <string name="indeterminate">Partially checked</string>
+    <string name="language_subtitle">You can change this later in Settings</string>
+    <string name="language_title">Choose your language</string>
+    <string name="m3c_bottom_sheet_collapse_description">Collapse bottom sheet</string>
+    <string name="m3c_bottom_sheet_dismiss_description">Dismiss bottom sheet</string>
+    <string name="m3c_bottom_sheet_drag_handle_description">Drag handle</string>
+    <string name="m3c_bottom_sheet_expand_description">Expand bottom sheet</string>
+    <string name="m3c_bottom_sheet_pane_title">Bottom Sheet</string>
+    <string name="m3c_date_input_headline">Entered date</string>
+    <string name="m3c_date_input_headline_description">Entered date: %1$s</string>
+    <string name="m3c_date_input_invalid_for_pattern">Date does not match expected pattern: %1$s</string>
+    <string name="m3c_date_input_invalid_not_allowed">Date not allowed: %1$s</string>
+    <string name="m3c_date_input_invalid_year_range">
+        Date out of expected year range %1$s - %2$s
+    </string>
+    <string name="m3c_date_input_label">Date</string>
+    <string name="m3c_date_input_no_input_description">None</string>
+    <string name="m3c_date_input_title">Select date</string>
+    <string name="m3c_date_picker_headline">"Selected date"</string>
+    <string name="m3c_date_picker_headline_description">Current selection: %1$s</string>
+    <string name="m3c_date_picker_navigate_to_year_description">Navigate to year %1$s</string>
+    <string name="m3c_date_picker_no_selection_description">None</string>
+    <string name="m3c_date_picker_scroll_to_earlier_years">Scroll to show earlier years</string>
+    <string name="m3c_date_picker_scroll_to_later_years">Scroll to show later years</string>
+    <string name="m3c_date_picker_switch_to_calendar_mode">Switch to calendar input mode</string>
+    <string name="m3c_date_picker_switch_to_day_selection">
+        "Swipe to select a year, or tap to switch back to selecting a day"
+    </string>
+    <string name="m3c_date_picker_switch_to_input_mode">Switch to text input mode</string>
+    <string name="m3c_date_picker_switch_to_next_month">"Change to next month"</string>
+    <string name="m3c_date_picker_switch_to_previous_month">"Change to previous month"</string>
+    <string name="m3c_date_picker_switch_to_year_selection">"Switch to selecting a year"</string>
+    <string name="m3c_date_picker_title">"Select date"</string>
+    <string name="m3c_date_picker_today_description">Today</string>
+    <string name="m3c_date_picker_year_picker_pane_title">Year picker visible</string>
+    <string name="m3c_date_range_input_invalid_range_input">Invalid date range input</string>
+    <string name="m3c_date_range_input_title">Enter dates</string>
+    <string name="m3c_date_range_picker_day_in_range">In range</string>
+    <string name="m3c_date_range_picker_end_headline">End date</string>
+    <string name="m3c_date_range_picker_scroll_to_next_month">Scroll to show the next month</string>
+    <string name="m3c_date_range_picker_scroll_to_previous_month">Scroll to show the previous month</string>
+    <string name="m3c_date_range_picker_start_headline">Start date</string>
+    <string name="m3c_date_range_picker_title">Select dates</string>
+    <string name="m3c_dialog">"Dialog"</string>
+    <string name="m3c_dropdown_menu_collapsed">Collapsed</string>
+    <string name="m3c_dropdown_menu_expanded">Expanded</string>
+    <string name="m3c_dropdown_menu_toggle">Toggle dropdown menu</string>
+    <string name="m3c_search_bar_search">Search</string>
+    <string name="m3c_snackbar_dismiss">Dismiss</string>
+    <string name="m3c_suggestions_available">Suggestions below</string>
+    <string name="m3c_time_picker_am">AM</string>
+    <string name="m3c_time_picker_hour">Hour</string>
+    <string name="m3c_time_picker_hour_24h_suffix">%1$d hours</string>
+    <string name="m3c_time_picker_hour_selection">Select hour</string>
+    <string name="m3c_time_picker_hour_suffix">%1$d o\'clock</string>
+    <string name="m3c_time_picker_hour_text_field">for hour</string>
+    <string name="m3c_time_picker_minute">Minute</string>
+    <string name="m3c_time_picker_minute_selection">Select minutes</string>
+    <string name="m3c_time_picker_minute_suffix">%1$d minutes</string>
+    <string name="m3c_time_picker_minute_text_field">for minutes</string>
+    <string name="m3c_time_picker_period_toggle_description">Select AM or PM</string>
+    <string name="m3c_time_picker_pm">PM</string>
+    <string name="m3c_tooltip_long_press_label">Show tooltip</string>
+    <string name="m3c_tooltip_pane_description">Tooltip</string>
+    <string description="This string appears within a window that describes an ad&apos;s contents. It indicates that the following text would be the body field (textual content) of the native ad. [CHAR_LIMIT=NONE]" name="native_body">
+    Body
+  </string>
+    <string description="This string appears within a window that describes an ad&apos;s contents. It indicates that the following text would be the headline field (title) of the native ad. [CHAR_LIMIT=NONE]" name="native_headline">
+    Headline
+  </string>
+    <string description="This string appears within a window that describes an ad&apos;s contents. It indicates that the following image / video would be the media view field (graphical content) of the native ad. [CHAR_LIMIT=NONE]" name="native_media_view">
+    Media View
+  </string>
+    <string name="nav_about">About</string>
+    <string name="nav_help">Help &amp; FAQ</string>
+    <string name="nav_language">Language</string>
+    <string name="nav_privacy">Privacy policy</string>
+    <string name="nav_rate">Rate AudioMaster</string>
+    <string name="navigation_menu">"Navigation menu"</string>
+    <string name="not_selected">Not selected</string>
+    <string description="Label on the button to go to settings. [CHAR_LIMIT=20]" name="notifications_permission_confirm">
+      Allow</string>
+    <string description="Label on the button to decline going to settings. [CHAR_LIMIT=20]" name="notifications_permission_decline">
+      Don\'t allow</string>
+    <string description="Body of the dialog presented when an ad wants to grant notifications permission. [CHAR_LIMIT=NONE]" name="notifications_permission_title">
+      Allow app to send you notifications?</string>
+    <string description="Describes content of the offline dialog image view. This property is used primarily for accessibility. [CHAR_LIMIT=NONE]" name="offline_dialog_image_description">
+      Icon</string>
+    <string description="Confirmation text displayed when the user opts in to get a notification. [CHAR_LIMIT=NONE]" name="offline_dialog_text">
+      Thanks for your interest.\nWe will share more once you\'re back online.</string>
+    <string description="Title of the notification which directs the user to the landing page of the ad. [CHAR_LIMIT=NONE]" name="offline_notification_title">
+      You are back online! Let\'s pick up where we left off</string>
+    <string description="Title of the notification which directs the user to the landing page of the ad. Includes the advertiser name [CHAR_LIMIT=NONE]" name="offline_notification_title_with_advertiser">
+      You are back online! Continue learning about %s</string>
+    <string description="Label on the button to opt in to a notification later when the user is back online. [CHAR_LIMIT=12]" name="offline_opt_in_confirm">
+      OK</string>
+    <string description="Label on the button to decline to get a notification later when the user is back online. [CHAR_LIMIT=12]" name="offline_opt_in_decline">
+      No thanks</string>
+    <string description="Body of the dialog presented when an ad is clicked while offline. [CHAR_LIMIT=NONE]" name="offline_opt_in_message">
+      We\'ll send you a notification with a link to the advertiser site.</string>
+    <string description="Title of the dialog presented when an ad is clicked while offline. [CHAR_LIMIT=NONE]" name="offline_opt_in_title">
+      Open ad when you\'re back online.</string>
+    <string name="onb1_body">Turn quiet, muddy recordings into loud, clear, release-ready audio in seconds.</string>
+    <string name="onb1_title">Master Like a Pro</string>
+    <string name="onb2_body">A 6-band equalizer with genre presets for music, podcasts and voiceovers.</string>
+    <string name="onb2_title">Shape Your Sound</string>
+    <string name="onb3_body">Our smart limiter pushes your loudness to the max while protecting your dynamics.</string>
+    <string name="onb3_title">Boost Without Clipping</string>
+    <string name="onb4_body">Save in high quality and share to YouTube, social or your distributor. Originals are never overwritten.</string>
+    <string name="onb4_title">Export Anywhere</string>
+    <string name="one_time">one-time</string>
+    <string name="per_month">per month</string>
+    <string name="per_year">per year</string>
+    <string name="plan_lifetime">Lifetime</string>
+    <string name="plan_monthly">Monthly</string>
+    <string name="plan_yearly">Yearly</string>
+    <string name="pro_legal">Cancel anytime. Payment is charged to your Google Play account. Subscriptions renew automatically unless cancelled.</string>
+    <string name="pro_subtitle">Remove ads and unlock every mastering tool in the highest quality.</string>
+    <string name="pro_title">AudioMaster Pro</string>
+    <string name="pro_unlocked">Pro unlocked</string>
+    <string name="pro_unlocked_sub">No ads · all tools unlocked</string>
+    <string name="project_id" translatable="false">audio-master-ab44b</string>
+    <string name="range_end">"Range end"</string>
+    <string name="range_start">"Range start"</string>
+    <string name="s1">Save image</string>
+    <string name="s2">"Allow Ad to store image in Picture gallery?"</string>
+    <string name="s3">Accept</string>
+    <string name="s4">Decline</string>
+    <string name="s5">Create calendar event</string>
+    <string name="s6">Allow Ad to create a calendar event?</string>
+    <string name="s7">Test Ad</string>
+    <string name="section_audio">Audio</string>
+    <string name="section_general">General</string>
+    <string name="selected">Selected</string>
+    <string name="set_auto_normalize">Auto-normalize on import</string>
+    <string name="set_auto_normalize_sub">Level out loudness before mastering</string>
+    <string name="set_haptics">Haptic feedback</string>
+    <string name="set_keep_original">Always keep original</string>
+    <string name="set_keep_original_sub">Never overwrite source files</string>
+    <string name="settings_title">Settings</string>
+    <string name="snackbar_pane_title">Alert</string>
+    <string name="state_empty">Empty</string>
+    <string name="state_off">Off</string>
+    <string name="state_on">On</string>
+    <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="switch_role">Switch</string>
+    <string name="tab">Tab</string>
+    <string name="template_percent"><ns1:g id="percentage">%1$d</ns1:g> percent.</string>
+    <string name="tool_auto_master">Auto Master</string>
+    <string name="tool_equalizer">Equalizer</string>
+    <string name="tool_presets">Presets</string>
+    <string name="tool_volume_boost">Volume Boost</string>
+    <string name="tooltip_description">tooltip</string>
+    <string name="tooltip_label">show tooltip</string>
+    <string name="upgrade_pro">Upgrade to Pro</string>
+    <string name="upgrade_pro_sub">Remove ads · all presets · lossless export</string>
+    <string description="This string appears within a watermark on video ads for debugging. [CHAR_LIMIT=NONE]" name="watermark_label_prefix">
+    "AdMob - "
+  </string>
+    <style name="Base.Theme.SplashScreen" parent="Base.v21.Theme.SplashScreen"/>
+    <style name="Base.Theme.SplashScreen.DayNight" parent="Base.Theme.SplashScreen.Light"/>
+    <style name="Base.Theme.SplashScreen.Light" parent="Base.v21.Theme.SplashScreen.Light"/>
+    <style name="Base.v21.Theme.SplashScreen" parent="android:Theme.DeviceDefault.NoActionBar">
+    </style>
+    <style name="Base.v21.Theme.SplashScreen.Light" parent="android:Theme.DeviceDefault.Light.NoActionBar">
+    </style>
+    <style name="DialogWindowTheme">
+        <item name="android:windowClipToOutline">false</item>
+    </style>
+    <style name="EdgeToEdgeFloatingDialogTheme" parent="android:Theme.DeviceDefault.Dialog">
+        <item name="android:windowLayoutInDisplayCutoutMode" ns2:targetApi="27">@integer/m3c_window_layout_in_display_cutout_mode</item>
+        <item name="android:windowClipToOutline">false</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowElevation">0dp</item>
+    </style>
+    <style name="EdgeToEdgeFloatingDialogWindowTheme">
+        <item name="android:dialogTheme">@style/EdgeToEdgeFloatingDialogTheme</item>
+    </style>
+    <style name="FloatingDialogTheme">
+        <item name="android:windowIsFloating">false</item>
+    </style>
+    <style name="FloatingDialogWindowTheme">
+        <item name="android:windowClipToOutline">false</item>
+        <item name="android:dialogTheme">@style/FloatingDialogTheme</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+    <style name="TextAppearance.Compat.Notification" parent="@android:style/TextAppearance.StatusBar.EventContent"/>
+    <style name="TextAppearance.Compat.Notification.Info">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+    </style>
+    <style name="TextAppearance.Compat.Notification.Line2" parent="TextAppearance.Compat.Notification.Info"/>
+    <style name="TextAppearance.Compat.Notification.Time">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+    </style>
+    <style name="TextAppearance.Compat.Notification.Title" parent="@android:style/TextAppearance.StatusBar.EventContent.Title"/>
+    <style name="Theme.AudioMaster" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/abyss</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+    <style name="Theme.AudioMaster.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/abyss</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_splash_logo</item>
+        <item name="postSplashScreenTheme">@style/Theme.AudioMaster</item>
+    </style>
+    <style name="Theme.IAPTheme" parent="android:Theme">
+<item name="android:windowIsTranslucent">true</item>
+<item name="android:windowBackground">@android:color/transparent</item>
+<item name="android:windowContentOverlay">@null</item>
+<item name="android:windowNoTitle">true</item>
+<item name="android:windowIsFloating">true</item>
+<item name="android:backgroundDimEnabled">false</item>
+</style>
+    <style name="Theme.SplashScreen" parent="Theme.SplashScreen.Common">
+        <item name="postSplashScreenTheme">?android:attr/theme</item>
+        <item name="windowSplashScreenAnimationDuration">
+            @integer/default_icon_animation_duration
+        </item>
+        <item name="windowSplashScreenBackground">?android:colorBackground</item>
+        <item name="windowSplashScreenAnimatedIcon">@android:drawable/sym_def_app_icon</item>
+
+    </style>
+    <style name="Theme.SplashScreen.Common" parent="Base.Theme.SplashScreen.DayNight">
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">
+            @drawable/compat_splash_screen_no_icon_background
+        </item>
+        <item name="android:opacity">opaque</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:fitsSystemWindows">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="splashScreenIconSize">@dimen/splashscreen_icon_size_no_background</item>
+    </style>
+    <style name="Theme.SplashScreen.IconBackground" parent="Theme.SplashScreen">
+        <item name="android:windowBackground">@drawable/compat_splash_screen</item>
+        <item name="splashScreenIconSize">@dimen/splashscreen_icon_size_with_background</item>
+    </style>
+    <style name="Widget.Compat.NotificationActionContainer" parent=""/>
+    <style name="Widget.Compat.NotificationActionText" parent=""/>
+    <declare-styleable name="ActivityNavigator">
+        <attr name="android:name"/>
+        <attr format="string" name="action"/>
+        <attr format="string" name="data"/>
+        <attr format="string" name="dataPattern"/>
+        <attr format="string" name="targetPackage"/>
+    </declare-styleable>
+    <declare-styleable name="AdsAttrs">
+<attr format="string" name="adSize"/>
+
+<attr format="string" name="adSizes"/>
+
+<attr format="string" name="adUnitId"/>
+</declare-styleable>
+    <declare-styleable name="Capability">
+        
+        <attr format="reference" name="queryPatterns"/>
+        
+        <attr format="boolean" name="shortcutMatchRequired"/>
+    </declare-styleable>
+    <declare-styleable name="ColorStateListItem">
+        
+        <attr name="android:color"/>
+        
+        <attr format="float" name="alpha"/>
+        <attr name="android:alpha"/>
+        
+        <attr format="float" name="lStar"/>
+        <attr name="android:lStar"/>
+    </declare-styleable>
+    <declare-styleable name="FontFamily">
+        
+        <attr format="string" name="fontProviderAuthority"/>
+        
+        <attr format="string" name="fontProviderPackage"/>
+        
+        <attr format="string" name="fontProviderQuery"/>
+        
+        <attr format="string" name="fontProviderFallbackQuery"/>
+        
+        <attr format="reference" name="fontProviderCerts"/>
+        
+        <attr name="fontProviderFetchStrategy">
+            <!-- The blocking font fetch works as follows.
+              First, check the local cache, then if the requested font is not cached, request the
+              font from the provider and wait until it is finished.  You can change the length of
+              the timeout by modifying fontProviderFetchTimeout.  If the timeout happens, the
+              default typeface will be used instead. -->
+            <enum name="blocking" value="0"/>
+            <!-- The async font fetch works as follows.
+              First, check the local cache, then if the requested font is not cached, trigger a
+              request the font and continue with layout inflation. Once the font fetch succeeds, the
+              target text view will be refreshed with the downloaded font data. The
+              fontProviderFetchTimeout will be ignored if async loading is specified. -->
+            <enum name="async" value="1"/>
+        </attr>
+        
+        <attr format="integer" name="fontProviderFetchTimeout">
+            <!-- A special value for the timeout. In this case, the blocking font fetching will not
+              timeout and wait until a reply is received from the font provider. -->
+            <enum name="forever" value="-1"/>
+        </attr>
+        
+        <attr format="string" name="fontProviderSystemFontFamily"/>
+    </declare-styleable>
+    <declare-styleable name="FontFamilyFont">
+        
+        <attr name="fontStyle">
+            <enum name="normal" value="0"/>
+            <enum name="italic" value="1"/>
+        </attr>
+        
+        <attr format="reference" name="font"/>
+        
+        <attr format="integer" name="fontWeight"/>
+        
+        <attr format="string" name="fontVariationSettings"/>
+        
+        <attr format="integer" name="ttcIndex"/>
+        
+        <attr name="android:fontStyle"/>
+        <attr name="android:font"/>
+        <attr name="android:fontWeight"/>
+        <attr name="android:fontVariationSettings"/>
+        <attr name="android:ttcIndex"/>
+    </declare-styleable>
+    <declare-styleable name="GradientColor">
+        
+        <attr name="android:startColor"/>
+        
+        <attr name="android:centerColor"/>
+        
+        <attr name="android:endColor"/>
+        
+        <attr name="android:type"/>
+
+        
+        
+        <attr name="android:gradientRadius"/>
+
+        
+        
+        <attr name="android:centerX"/>
+        
+        <attr name="android:centerY"/>
+
+        
+        
+        <attr name="android:startX"/>
+        
+        <attr name="android:startY"/>
+        
+        <attr name="android:endX"/>
+        
+        <attr name="android:endY"/>
+
+        
+        <attr name="android:tileMode"/>
+    </declare-styleable>
+    <declare-styleable name="GradientColorItem">
+        
+        <attr name="android:offset"/>
+        
+        <attr name="android:color"/>
+    </declare-styleable>
+    <declare-styleable name="LoadingImageView"><attr name="imageAspectRatioAdjust">
+<enum name="none" value="0"/>
+
+<enum name="adjust_width" value="1"/>
+
+<enum name="adjust_height" value="2"/>
+
+</attr>
+
+<attr format="float" name="imageAspectRatio"/>
+
+<attr format="boolean" name="circleCrop"/>
+</declare-styleable>
+    <declare-styleable name="NavAction">
+        <attr name="android:id"/>
+        <attr format="reference" name="destination"/>
+        <attr format="boolean" name="launchSingleTop"/>
+        <attr format="boolean" name="restoreState"/>
+        <attr format="reference" name="popUpTo"/>
+        <attr format="boolean" name="popUpToInclusive"/>
+        <attr format="boolean" name="popUpToSaveState"/>
+        <attr format="reference" name="enterAnim"/>
+        <attr format="reference" name="exitAnim"/>
+        <attr format="reference" name="popEnterAnim"/>
+        <attr format="reference" name="popExitAnim"/>
+    </declare-styleable>
+    <declare-styleable name="NavArgument">
+        <attr name="android:name"/>
+        <attr name="android:defaultValue"/>
+        <attr format="boolean" name="nullable"/>
+        <attr format="string" name="argType"/>
+    </declare-styleable>
+    <declare-styleable name="NavDeepLink">
+        <attr format="string" name="uri"/>
+        <attr format="string" name="action"/>
+        <attr format="string" name="mimeType"/>
+        <attr name="android:autoVerify"/>
+    </declare-styleable>
+    <declare-styleable name="NavGraphNavigator">
+        <attr format="reference" name="startDestination"/>
+    </declare-styleable>
+    <declare-styleable name="NavHost">
+        <attr format="reference" name="navGraph"/>
+    </declare-styleable>
+    <declare-styleable name="NavInclude">
+        <attr format="reference" name="graph"/>
+    </declare-styleable>
+    <declare-styleable name="Navigator">
+        <attr name="android:id"/>
+        <attr format="string" name="route"/>
+        <attr name="android:label"/>
+    </declare-styleable>
+    <declare-styleable name="SignInButton"><attr format="reference" name="buttonSize">
+<enum name="standard" value="0"/>
+
+<enum name="wide" value="1"/>
+
+<enum name="icon_only" value="2"/>
+
+</attr>
+<attr format="reference" name="colorScheme">
+<enum name="dark" value="0"/>
+
+<enum name="light" value="1"/>
+
+<enum name="auto" value="2"/>
+
+</attr>
+
+<attr format="reference|string" name="scopeUris"/>
+</declare-styleable>
+</resources>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "7986666173",
+    "project_id": "audio-master-ab44b",
+    "storage_bucket": "audio-master-ab44b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:7986666173:android:82f3fa1f778fe26465b5d4",
+        "android_client_info": {
+          "package_name": "com.lw.audiomaster"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3G2VBBY_UTAGsDbG8J6fthxQk7hlsqxA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
